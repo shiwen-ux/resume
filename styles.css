@@ -1,676 +1,903 @@
-/* CSS Variables */
+/* ==========================================================================
+   Word Web UI - Resume Portfolio
+   
+   Table of Contents:
+   1. CSS Custom Properties (Design Tokens)
+   2. Reset & Base Styles
+   3. Layout Components
+   4. Title Bar
+   5. Tab Bar
+   6. Ribbon
+   7. Document Area
+   8. Status Bar
+   9. Utility Classes
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS Custom Properties (Design Tokens)
+   ========================================================================== */
+
 :root {
-    --color-primary: #1A1A1A;
-    --color-secondary: #6B6B6B;
-    --color-body: #3A3A3A;
-    --color-muted: #9A9A9A;
-    --color-divider: #E0E0E0;
-    --color-background: #E8E8E8;
-    --color-paper: #FFFFFF;
-    --color-hover: #FAFAFA;
-    --color-selected: #F5F5F5;
+    /* Colors - Dark Theme */
+    --color-bg-primary: #1F1F1F;
+    --color-bg-secondary: #2D2D2D;
+    --color-bg-tertiary: #252525;
+    --color-bg-input: #3D3D3D;
+    --color-bg-hover: #404040;
     
-    --font-serif: 'Source Serif 4', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #CCCCCC;
+    --color-text-muted: #888888;
+    --color-text-disabled: #666666;
+    
+    --color-border: #404040;
+    --color-divider: #404040;
+    
+    --color-accent: #0078D4;
+    --color-accent-hover: #0F6CBD;
+    
+    /* Paper Colors */
+    --color-paper: #FFFFFF;
+    --color-paper-text: #1A1A1A;
+    --color-paper-secondary: #666666;
+    --color-paper-body: #3A3A3A;
+    
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-serif: 'Source Serif 4', 'Georgia', serif;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+    
+    /* Border Radius */
+    --radius-sm: 3px;
+    --radius-md: 4px;
+    --radius-lg: 6px;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.2s ease;
 }
 
-/* Reset */
+/* ==========================================================================
+   2. Reset & Base Styles
+   ========================================================================== */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+html, body {
+    height: 100%;
 }
 
 body {
     font-family: var(--font-sans);
-    line-height: 1.5;
-    color: var(--color-primary);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Page Background */
-.page-background {
-    min-height: 100vh;
-    background-color: var(--color-background);
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   3. Layout Components
+   ========================================================================== */
+
+.word-app {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Page Navigation Tabs */
-.page-tabs {
+/* ==========================================================================
+   4. Title Bar
+   ========================================================================== */
+
+.title-bar {
     display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 var(--spacing-lg);
+    background-color: var(--color-bg-primary);
+    gap: var(--spacing-md);
+}
+
+.title-bar__left,
+.title-bar__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+/* App Launcher (9-dot grid) */
+.app-launcher {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.app-launcher:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.app-launcher__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.app-launcher__grid span {
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-text-muted);
+    border-radius: 50%;
+}
+
+/* Word Logo */
+.word-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #185ABD;
+    border-radius: var(--radius-md);
+}
+
+.word-logo span {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* Document Name */
+.doc-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+/* Document Actions */
+.doc-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+/* Icon Button */
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.icon-btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-secondary);
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 320px;
+    height: 32px;
+    padding: 0 var(--spacing-md);
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    cursor: text;
+    transition: background-color var(--transition-fast);
+}
+
+.search-bar:hover {
+    background-color: var(--color-bg-input);
+}
+
+.search-bar__icon {
+    font-size: 12px;
+}
+
+.search-bar__text {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+/* Toolbar Button */
+.toolbar-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.toolbar-btn:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.toolbar-btn__icon {
+    font-size: 12px;
+}
+
+.toolbar-btn__text {
+    font-size: 13px;
+}
+
+.toolbar-btn__arrow {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    margin-left: 2px;
+}
+
+/* Share Button */
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-accent-hover);
+    color: var(--color-text-primary);
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.share-btn:hover {
+    background-color: var(--color-accent);
+}
+
+.share-btn__arrow {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+/* User Avatar */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-bg-hover);
+}
+
+/* ==========================================================================
+   5. Tab Bar
+   ========================================================================== */
+
+.tab-bar {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 var(--spacing-lg);
+    background-color: var(--color-bg-primary);
 }
 
 .tab {
-    padding: 10px 24px;
-    font-family: var(--font-sans);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background: var(--color-paper);
-    border: 1px solid var(--color-divider);
-    cursor: pointer;
-    transition: all 0.2s ease;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    color: var(--color-text-secondary);
+    font-size: 13px;
+    border-bottom: 2px solid transparent;
+    transition: all var(--transition-fast);
 }
 
 .tab:hover {
-    background: var(--color-hover);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-hover);
 }
 
-.tab.active {
-    background: var(--color-primary);
-    color: var(--color-paper);
-    border-color: var(--color-primary);
+.tab--active {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    border-bottom-color: var(--color-accent);
 }
 
-/* Stacked Papers Container */
-.papers-stack {
+/* ==========================================================================
+   6. Ribbon
+   ========================================================================== */
+
+.ribbon {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 var(--spacing-lg);
+    background-color: var(--color-bg-secondary);
+    gap: var(--spacing-xs);
+}
+
+.ribbon__group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.ribbon__divider {
+    width: 1px;
+    height: 24px;
+    background-color: var(--color-divider);
+    margin: 0 var(--spacing-xs);
+}
+
+/* Ribbon Button */
+.ribbon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    padding: 0 var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.ribbon-btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
+}
+
+.ribbon-btn--disabled {
+    color: var(--color-text-muted);
+    cursor: default;
+}
+
+.ribbon-btn--disabled:hover {
+    background-color: transparent;
+    color: var(--color-text-muted);
+}
+
+.ribbon-btn--muted {
+    color: var(--color-text-muted);
+}
+
+/* Color Button */
+.ribbon-btn--color {
+    flex-direction: column;
+    gap: 2px;
+    width: 32px;
+}
+
+.ribbon-btn__letter {
+    font-size: 14px;
+}
+
+.ribbon-btn__color-bar {
+    width: 16px;
+    height: 3px;
+}
+
+/* Ribbon Dropdown */
+.ribbon-dropdown {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 var(--spacing-sm);
+    background-color: var(--color-bg-input);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.ribbon-dropdown:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.ribbon-dropdown--font {
+    width: 130px;
+}
+
+.ribbon-dropdown--style {
+    width: 90px;
+}
+
+.ribbon-dropdown__text {
+    flex: 1;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ribbon-dropdown__arrow {
+    font-size: 10px;
+    color: var(--color-text-muted);
+    margin-left: var(--spacing-xs);
+}
+
+/* Ribbon Dropdown Menus */
+.ribbon-dropdown {
     position: relative;
-    width: 100%;
-    max-width: 728px;
-    height: 1000px;
 }
 
-/* Resume Paper */
-.resume-paper {
+.dropdown-menu {
+    display: none;
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
+    min-width: 100%;
+    margin-top: 4px;
+    padding: var(--spacing-xs);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-menu--font {
+    width: 160px;
+}
+
+.dropdown-menu--size {
+    width: 60px;
+}
+
+.dropdown-menu--color {
+    display: none;
+    width: 140px;
+    padding: var(--spacing-sm);
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.dropdown-menu--color.open {
+    display: flex;
+}
+
+.dropdown-item {
+    display: block;
     width: 100%;
-    max-width: 728px;
-    background-color: var(--color-paper);
-    padding: 60px 72px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-align: left;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--transition-fast);
+}
+
+.dropdown-item:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
+}
+
+.color-swatch {
+    width: 24px;
+    height: 24px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.color-swatch:hover {
+    border-color: var(--color-text-primary);
+    transform: scale(1.1);
+}
+
+.ribbon-dropdown--size {
+    width: 50px;
+}
+
+.ribbon-dropdown--color {
+    gap: 2px;
+}
+
+/* ==========================================================================
+   7. Document Area
+   ========================================================================== */
+
+.document-area {
+    display: flex;
+    flex: 1;
+    padding: var(--spacing-xl);
+    background-color: var(--color-bg-primary);
+    gap: var(--spacing-xl);
+    overflow: hidden;
+}
+
+/* Side Panel */
+.side-panel {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 40px;
+    padding-top: var(--spacing-sm);
+}
+
+.side-panel__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-bg-input);
+    color: var(--color-text-muted);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.side-panel__btn:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-secondary);
+}
+
+/* Paper */
+.paper {
+    flex: 1;
+    max-width: 680px;
+    background-color: var(--color-paper);
+    padding: 60px 72px;
     overflow-y: auto;
-    max-height: 950px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Paper Stack Positions */
-.paper-front {
-    z-index: 3;
-    transform: translateY(0) scale(1);
-    opacity: 1;
+/* Comment Panel */
+.comment-panel {
+    width: 280px;
+    padding-top: 40px;
 }
 
-.paper-back-1 {
-    z-index: 2;
-    transform: translateY(16px) scale(0.97);
-    opacity: 0.7;
-    pointer-events: none;
-}
+/* ==========================================================================
+   Resume Content Styles
+   ========================================================================== */
 
-.paper-back-2 {
-    z-index: 1;
-    transform: translateY(32px) scale(0.94);
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.resume-paper.active {
-    pointer-events: auto;
-}
-
-/* Header */
-.header {
+/* Resume Header */
+.resume-header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--color-primary);
+    text-align: left;
+    gap: var(--spacing-xs);
 }
 
-.header-name {
+.resume-header__name {
     font-family: var(--font-serif);
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-paper-text);
+    letter-spacing: 2px;
 }
 
-.header-contact {
+.resume-header__role {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-paper-secondary);
+    letter-spacing: 1px;
+}
+
+.resume-header__contact {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 24px;
-    font-size: 11px;
-    color: var(--color-secondary);
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-md);
 }
 
-/* Section Styles */
-.section {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.section-title {
+.resume-header__contact span {
     font-family: var(--font-sans);
     font-size: 11px;
-    font-weight: 600;
-    color: var(--color-primary);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    color: var(--color-paper-secondary);
 }
 
-.section-line {
-    height: 1px;
-    background-color: var(--color-divider);
+/* Resume Divider */
+.resume-divider {
     width: 100%;
-    transition: background-color 0.2s ease;
+    height: 1px;
+    border: none;
+    background-color: #E0E0E0;
+    margin: var(--spacing-sm) 0;
 }
 
-/* Interactive Section States */
-.section-interactive {
-    padding: 16px;
-    margin: -16px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
+.resume-divider--dark {
+    background-color: var(--color-paper-text);
+    margin: var(--spacing-lg) 0;
 }
 
-.section-interactive:hover {
-    background-color: var(--color-hover);
-    border-left: 1px solid var(--color-divider);
+/* Resume Section */
+.resume-section {
+    margin-bottom: var(--spacing-xl);
 }
 
-.section-interactive:hover .section-line {
-    background-color: #D0D0D0;
+.resume-section__title {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-paper-text);
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
 }
 
-.section-interactive.selected {
-    background-color: var(--color-selected);
-    border-left: 1px solid var(--color-primary);
-}
-
-.section-interactive.selected .section-line {
-    background-color: var(--color-primary);
-}
-
-.section-interactive.selected .summary-text,
-.section-interactive.selected .skill-value {
-    color: var(--color-primary);
-}
-
-/* Summary */
-.summary-text {
+.resume-section__text {
     font-family: var(--font-serif);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 400;
-    color: var(--color-body);
+    color: var(--color-paper-body);
     line-height: 1.7;
 }
 
-/* Experience */
+/* Interactive Sections */
+.resume-section--interactive,
+.experience-item--interactive,
+.education-item--interactive {
+    padding: var(--spacing-md);
+    margin: calc(-1 * var(--spacing-md));
+    margin-bottom: var(--spacing-md);
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.resume-section--interactive:hover,
+.experience-item--interactive:hover,
+.education-item--interactive:hover {
+    background-color: #FAFAFA;
+    border-left-color: #E0E0E0;
+}
+
+.resume-section--interactive.selected,
+.experience-item--interactive.selected,
+.education-item--interactive.selected {
+    background-color: #E8F4FD;
+    border-left-color: var(--color-accent);
+}
+
+/* Experience List */
 .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--spacing-lg);
 }
 
-.experience-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-/* Interactive Item States */
-.item-interactive {
-    padding: 16px;
-    margin: -16px;
-    margin-bottom: 4px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.item-interactive:hover {
-    background-color: var(--color-hover);
-    border-left: 1px solid var(--color-divider);
-}
-
-.item-interactive.selected {
-    background-color: var(--color-selected);
-    border-left: 1px solid var(--color-primary);
-}
-
-.item-interactive.selected .experience-role,
-.item-interactive.selected .education-school {
-    color: var(--color-body);
-    font-weight: 500;
-}
-
-.item-interactive.selected .experience-date,
-.item-interactive.selected .education-year {
-    color: var(--color-primary);
-    font-weight: 500;
-}
-
-.item-interactive.selected .experience-bullets li {
-    color: var(--color-primary);
-}
-
-.experience-header {
+.experience-item__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    margin-bottom: var(--spacing-sm);
 }
 
-.experience-left {
+.experience-item__left {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
-.experience-company {
+.experience-item__company {
     font-family: var(--font-serif);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-paper-text);
 }
 
-.experience-role {
+.experience-item__role {
     font-family: var(--font-sans);
     font-size: 11px;
-    font-weight: 400;
-    color: var(--color-secondary);
+    font-weight: 500;
+    color: var(--color-paper-secondary);
 }
 
-.experience-date {
+.experience-item__date {
     font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--color-secondary);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-paper-text);
 }
 
-.experience-bullets {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding-top: 4px;
-    padding-left: 0;
+.experience-item__bullets {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
 
-.experience-bullets li {
+.experience-item__bullets li {
     font-family: var(--font-serif);
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--color-body);
-    line-height: 1.6;
+    font-size: 11px;
+    color: var(--color-paper-body);
+    line-height: 1.5;
+    padding-left: var(--spacing-md);
+    position: relative;
 }
 
-.experience-bullets li::before {
-    content: "• ";
+.experience-item__bullets li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
 }
 
-/* Two Column Section */
-.two-column-section {
+/* Resume Columns */
+.resume-columns {
     display: flex;
-    gap: 48px;
+    gap: var(--spacing-xl);
 }
 
-.left-column {
+.resume-section--half {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
 }
 
-.right-column {
-    width: 220px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-/* Education */
+/* Education List */
 .education-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: var(--spacing-md);
 }
 
 .education-item {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
 }
 
-.education-item.item-interactive {
-    margin: -16px;
-    margin-bottom: 0;
-}
-
-.education-item.item-interactive + .education-item.item-interactive {
-    margin-top: -4px;
-}
-
-.education-item + .education-item {
-    margin-top: 12px;
-}
-
-.education-degree {
+.education-item__degree {
     font-family: var(--font-serif);
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 600;
-    color: var(--color-primary);
+    color: var(--color-paper-text);
 }
 
-.education-school {
+.education-item__school {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-paper-secondary);
+}
+
+.education-item__year {
     font-family: var(--font-sans);
     font-size: 10px;
-    font-weight: 400;
-    color: var(--color-secondary);
+    font-weight: 500;
+    color: var(--color-paper-text);
 }
 
-.education-year {
-    font-family: var(--font-sans);
-    font-size: 9px;
-    font-weight: 400;
-    color: var(--color-muted);
-}
-
-/* Skills */
+/* Skills List */
 .skills-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--spacing-md);
 }
 
 .skill-row {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-}
-
-.skill-label {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--color-primary);
-}
-
-.skill-value {
-    font-family: var(--font-serif);
-    font-size: 10px;
-    font-weight: 400;
-    color: var(--color-body);
-}
-
-/* About Page Styles */
-.about-intro {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--color-body);
-    line-height: 1.8;
-}
-
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.interest-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.interest-icon {
-    font-size: 20px;
-}
-
-.interest-label {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: var(--color-secondary);
-}
-
-.interest-description {
-    font-family: var(--font-serif);
-    font-size: 11px;
-    color: var(--color-body);
-    line-height: 1.6;
-}
-
-.values-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.value-item {
-    font-family: var(--font-serif);
-    font-size: 11px;
-    color: var(--color-body);
-    line-height: 1.6;
-}
-
-.value-item strong {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--color-primary);
-    letter-spacing: 0.5px;
-}
-
-/* Project Details (Microsoft Work Page) */
-.project-details {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--color-divider);
-}
-
-.detail-row {
-    display: flex;
-    gap: 12px;
-}
-
-.detail-label {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--color-secondary);
-    min-width: 80px;
-}
-
-.detail-value {
-    font-family: var(--font-serif);
-    font-size: 11px;
-    color: var(--color-primary);
-    font-weight: 500;
-}
-
-/* Microsoft Work Page Styles */
-.project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.project-item {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 16px;
-    margin: -16px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.project-item:hover {
-    background-color: var(--color-hover);
-    border-left: 1px solid var(--color-divider);
-}
-
-.project-header {
-    display: flex;
-    flex-direction: column;
     gap: 4px;
 }
 
-.project-name {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-primary);
-}
-
-.project-role {
+.skill-row__label {
     font-family: var(--font-sans);
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: 1px;
-    color: var(--color-secondary);
+    color: var(--color-paper-text);
 }
 
-.project-description {
+.skill-row__value {
     font-family: var(--font-serif);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-paper-body);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. Status Bar
+   ========================================================================== */
+
+.status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 28px;
+    padding: 0 var(--spacing-lg);
+    background-color: var(--color-bg-secondary);
+}
+
+.status-bar__left,
+.status-bar__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.status-bar span {
     font-size: 11px;
-    color: var(--color-body);
-    line-height: 1.7;
+    color: var(--color-text-muted);
 }
 
-.project-metrics {
-    display: flex;
-    gap: 24px;
-    padding-top: 8px;
-    border-top: 1px solid var(--color-divider);
+/* Zoom Controls */
+.zoom-btn {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    padding: 0 var(--spacing-xs);
+    transition: color var(--transition-fast);
 }
 
-.metric-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.zoom-btn:hover {
+    color: var(--color-text-secondary);
 }
 
-.metric-value {
-    font-family: var(--font-serif);
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-primary);
+.zoom-slider {
+    position: relative;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-bg-hover);
+    border-radius: var(--radius-full);
 }
 
-.metric-label {
-    font-family: var(--font-sans);
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: var(--color-secondary);
+.zoom-slider__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-full);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .papers-stack {
-        height: auto;
-    }
-    
-    .resume-paper {
-        position: relative;
-        padding: 40px 32px;
-        max-height: none;
-        display: none;
-    }
-    
-    .resume-paper.active {
-        display: flex;
-    }
-    
-    .paper-back-1,
-    .paper-back-2 {
-        display: none;
-    }
-    
-    .two-column-section {
-        flex-direction: column;
-        gap: 32px;
-    }
-    
-    .right-column {
-        width: 100%;
-    }
-    
-    .header-name {
-        font-size: 28px;
-    }
-    
-    .header-contact {
-        gap: 16px;
-    }
-    
-    .interests-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.zoom-slider__thumb {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-@media (max-width: 480px) {
-    .page-background {
-        padding: 20px 12px;
-    }
-    
-    .page-tabs {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .tab {
-        padding: 8px 16px;
-        font-size: 10px;
-    }
-    
-    .resume-paper {
-        padding: 32px 24px;
-    }
-    
-    .header-contact {
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-    }
-    
-    .interests-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-metrics {
-        flex-wrap: wrap;
-        gap: 16px;
-    }
+.zoom-value {
+    min-width: 40px;
+    text-align: right;
 }
 
-/* Print Styles */
-@media print {
-    .page-background {
-        background: none;
-        padding: 0;
-    }
-    
-    .resume-paper {
-        box-shadow: none;
-        max-width: none;
-        padding: 0;
-    }
+/* ==========================================================================
+   9. Utility Classes
+   ========================================================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
