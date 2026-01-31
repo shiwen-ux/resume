@@ -226,7 +226,7 @@
                 e.stopPropagation();
                 currentFontFamily = item.dataset.font;
                 currentFontEl.textContent = item.textContent;
-                applyFont();
+                applyFontFamily();
                 fontMenu.classList.remove('open');
             });
         });
@@ -236,6 +236,24 @@
     const sizeDropdown = document.getElementById('size-dropdown');
     const sizeMenu = document.getElementById('size-menu');
     const currentSizeEl = document.getElementById('current-size');
+    
+    // Font Size Buttons
+    const increaseBtn = document.getElementById('increase-font');
+    const decreaseBtn = document.getElementById('decrease-font');
+    const MIN_FONT_SIZE = 9;
+    const MAX_FONT_SIZE = 18;
+    
+    function updateFontSizeButtons() {
+        if (increaseBtn) {
+            increaseBtn.disabled = currentFontSize >= MAX_FONT_SIZE;
+        }
+        if (decreaseBtn) {
+            decreaseBtn.disabled = currentFontSize <= MIN_FONT_SIZE;
+        }
+    }
+    
+    // Initialize button states
+    updateFontSizeButtons();
     
     if (sizeDropdown) {
         sizeDropdown.addEventListener('click', (e) => {
@@ -249,26 +267,28 @@
                 e.stopPropagation();
                 currentFontSize = parseInt(item.dataset.size);
                 currentSizeEl.textContent = currentFontSize;
-                applyFont();
+                applyFontSize();
+                updateFontSizeButtons();
                 sizeMenu.classList.remove('open');
             });
         });
     }
     
-    // Font Size Buttons
-    document.getElementById('increase-font')?.addEventListener('click', () => {
-        if (currentFontSize < 72) {
+    increaseBtn?.addEventListener('click', () => {
+        if (currentFontSize < MAX_FONT_SIZE) {
             currentFontSize += 1;
             currentSizeEl.textContent = currentFontSize;
-            applyFont();
+            applyFontSize();
+            updateFontSizeButtons();
         }
     });
     
-    document.getElementById('decrease-font')?.addEventListener('click', () => {
-        if (currentFontSize > 6) {
+    decreaseBtn?.addEventListener('click', () => {
+        if (currentFontSize > MIN_FONT_SIZE) {
             currentFontSize -= 1;
             currentSizeEl.textContent = currentFontSize;
-            applyFont();
+            applyFontSize();
+            updateFontSizeButtons();
         }
     });
     
@@ -296,7 +316,7 @@
     }
     
     // Apply Functions
-    function applyFont() {
+    function applyFontFamily() {
         if (paper) {
             // Apply font to paper and ALL child elements to override CSS specificity
             paper.style.fontFamily = currentFontFamily;
@@ -305,32 +325,68 @@
             paper.querySelectorAll('*').forEach(el => {
                 el.style.fontFamily = currentFontFamily;
             });
+        }
+    }
+    
+    function applyFontSize() {
+        if (paper) {
+            // Calculate scale factor based on default size of 11
+            const scaleFactor = currentFontSize / 11;
             
-            // Scale all text proportionally based on base size
-            const baseFontSize = currentFontSize;
+            // Apply scale using CSS transform for better reflow
+            paper.style.setProperty('--font-scale', scaleFactor);
             
-            // Set base font size on paper
-            paper.style.fontSize = `${baseFontSize}pt`;
+            // Scale the paper content proportionally
+            paper.style.fontSize = `${11 * scaleFactor}px`;
             
-            // Apply font size to ALL elements first (base size)
-            paper.querySelectorAll('*').forEach(el => {
-                el.style.fontSize = `${baseFontSize}pt`;
-                el.style.lineHeight = '1.5';
+            // Scale layout elements (sidebar, gaps, borders)
+            paper.querySelectorAll('.resume-layout').forEach(el => {
+                el.style.gap = `${40 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.resume-sidebar').forEach(el => {
+                el.style.width = `${160 * scaleFactor}px`;
+                el.style.paddingRight = `${24 * scaleFactor}px`;
+                el.style.borderRightWidth = `${1 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.resume-main').forEach(el => {
+                el.style.gap = `${28 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.resume-section').forEach(el => {
+                el.style.gap = `${12 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.resume-sidebar__section').forEach(el => {
+                el.style.marginBottom = `${16 * scaleFactor}px`;
             });
             
-            // Then scale specific elements proportionally
-            paper.querySelectorAll('.resume-header__name').forEach(el => {
-                el.style.fontSize = `${baseFontSize * 2.2}pt`;
+            // Update specific elements with their scaled sizes
+            paper.querySelectorAll('.resume-sidebar__name').forEach(el => {
+                el.style.fontSize = `${36 * scaleFactor}px`;
+                el.style.lineHeight = '1.1';
+                el.style.marginBottom = `${32 * scaleFactor}px`;
             });
-            paper.querySelectorAll('.resume-header__role').forEach(el => {
-                el.style.fontSize = `${baseFontSize * 1.1}pt`;
+            paper.querySelectorAll('.resume-sidebar__label').forEach(el => {
+                el.style.fontSize = `${10 * scaleFactor}px`;
+                el.style.marginBottom = `${4 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.resume-sidebar__text').forEach(el => {
+                el.style.fontSize = `${11 * scaleFactor}px`;
             });
             paper.querySelectorAll('.resume-section__title').forEach(el => {
-                el.style.fontSize = `${baseFontSize * 0.85}pt`;
-                el.style.letterSpacing = '1px';
+                el.style.fontSize = `${18 * scaleFactor}px`;
+                el.style.paddingBottom = `${6 * scaleFactor}px`;
+                el.style.borderBottomWidth = `${1 * scaleFactor}px`;
             });
-            paper.querySelectorAll('.experience-item__company, .education-item__degree').forEach(el => {
-                el.style.fontSize = `${baseFontSize * 1.1}pt`;
+            paper.querySelectorAll('.experience-item__company, .education-item__school').forEach(el => {
+                el.style.fontSize = `${13 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.experience-item__meta, .education-item__degree').forEach(el => {
+                el.style.fontSize = `${11 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.experience-item__description, .skills-list--bullets li').forEach(el => {
+                el.style.fontSize = `${11 * scaleFactor}px`;
+            });
+            paper.querySelectorAll('.experience-item, .education-item').forEach(el => {
+                el.style.marginBottom = `${16 * scaleFactor}px`;
             });
         }
     }

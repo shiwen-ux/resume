@@ -371,14 +371,17 @@ button:focus-visible {
     color: var(--color-text-primary);
 }
 
-.ribbon-btn--disabled {
-    color: var(--color-text-muted);
-    cursor: default;
+.ribbon-btn--disabled,
+.ribbon-btn:disabled {
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
-.ribbon-btn--disabled:hover {
+.ribbon-btn--disabled:hover,
+.ribbon-btn:disabled:hover {
     background-color: transparent;
-    color: var(--color-text-muted);
+    color: var(--color-text-disabled);
 }
 
 .ribbon-btn--muted {
@@ -580,7 +583,57 @@ button:focus-visible {
    Resume Content Styles
    ========================================================================== */
 
-/* Resume Header */
+/* Two-Column Resume Layout */
+.resume-layout {
+    display: flex;
+    gap: 40px;
+    min-height: 100%;
+}
+
+/* Resume Sidebar */
+.resume-sidebar {
+    width: 160px;
+    flex-shrink: 0;
+    padding-right: 24px;
+    border-right: 1px solid #E0E0E0;
+}
+
+.resume-sidebar__name {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-paper-text);
+    line-height: 1.1;
+    margin-bottom: 32px;
+}
+
+.resume-sidebar__section {
+    margin-bottom: 20px;
+}
+
+.resume-sidebar__label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-paper-secondary);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.resume-sidebar__text {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-paper-text);
+    line-height: 1.5;
+}
+
+/* Resume Main Content */
+.resume-main {
+    flex: 1;
+}
+
+/* Resume Header - kept for compatibility */
 .resume-header {
     display: flex;
     flex-direction: column;
@@ -607,7 +660,8 @@ button:focus-visible {
 
 .resume-header__contact {
     display: flex;
-    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-xl);
     margin-top: var(--spacing-md);
 }
 
@@ -637,12 +691,16 @@ button:focus-visible {
 }
 
 .resume-section__title {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 600;
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-weight: 400;
     color: var(--color-paper-text);
-    letter-spacing: 1px;
-    margin-bottom: var(--spacing-sm);
+    letter-spacing: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.resume-section__title--centered {
+    text-align: center;
 }
 
 .resume-section__text {
@@ -700,10 +758,18 @@ button:focus-visible {
 }
 
 .experience-item__company {
-    font-family: var(--font-serif);
-    font-size: 14px;
-    font-weight: 600;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
     color: var(--color-paper-text);
+}
+
+.experience-item__meta {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-paper-secondary);
+    margin-bottom: var(--spacing-xs);
 }
 
 .experience-item__role {
@@ -720,26 +786,11 @@ button:focus-visible {
     color: var(--color-paper-text);
 }
 
-.experience-item__bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.experience-item__bullets li {
-    font-family: var(--font-serif);
+.experience-item__description {
+    font-family: var(--font-sans);
     font-size: 11px;
     color: var(--color-paper-body);
-    line-height: 1.5;
-    padding-left: var(--spacing-md);
-    position: relative;
-}
-
-.experience-item__bullets li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
+    line-height: 1.6;
 }
 
 /* Resume Columns */
@@ -763,16 +814,17 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 2px;
-}
-
-.education-item__degree {
-    font-family: var(--font-serif);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-paper-text);
+    margin-bottom: var(--spacing-sm);
 }
 
 .education-item__school {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-paper-text);
+}
+
+.education-item__degree {
     font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 400;
@@ -791,6 +843,18 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+}
+
+.skills-list--bullets {
+    list-style: none;
+    gap: var(--spacing-xs);
+}
+
+.skills-list--bullets li {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--color-paper-body);
+    line-height: 1.6;
 }
 
 .skill-row {

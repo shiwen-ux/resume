@@ -41,10 +41,6 @@
                     <span class="toolbar-btn__icon">💬</span>
                     <span class="toolbar-btn__text">Comments</span>
                 </button>
-                <button class="toolbar-btn">
-                    <span class="toolbar-btn__icon">⚡</span>
-                    <span class="toolbar-btn__text">Catch up</span>
-                </button>
                 <button class="toolbar-btn toolbar-btn--dropdown">
                     <span class="toolbar-btn__icon">✏️</span>
                     <span class="toolbar-btn__text">Editing</span>
@@ -125,120 +121,87 @@
             </aside>
             
             <article class="paper">
-                <!-- Resume Header -->
-                <header class="resume-header">
-                    <h1 class="resume-header__name">SHIWEN JIANG</h1>
-                    <p class="resume-header__role">Product Designer</p>
-                    <div class="resume-header__contact">
-                        <span><span id="weather">☀️ --°C</span> Vancouver, CA</span>
-                        <span>shiwenjiang331@gmail.com</span>
-                        <span>linkedin.com/in/shiwen</span>
-                    </div>
-                </header>
-
-                <hr class="resume-divider resume-divider--dark">
-
-                <!-- Professional Summary -->
-                <section class="resume-section resume-section--interactive" data-section="summary">
-                    <h2 class="resume-section__title">PROFESSIONAL SUMMARY</h2>
-                    <hr class="resume-divider">
-                    <p class="resume-section__text">
-                        Product designer with 8+ years of experience creating intuitive digital experiences for enterprise products. Currently leading design initiatives at Microsoft, focusing on collaboration tools that reach 300M+ users worldwide. Expertise in design systems, accessibility, and user research.
-                    </p>
-                </section>
-
-                <!-- Professional Experience -->
-                <section class="resume-section">
-                    <h2 class="resume-section__title">PROFESSIONAL EXPERIENCE</h2>
-                    <hr class="resume-divider">
+                <div class="resume-layout">
+                    <!-- Left Sidebar -->
+                    <aside class="resume-sidebar">
+                        <h1 class="resume-sidebar__name">SHIWEN<br>JIANG</h1>
+                        
+                        <div class="resume-sidebar__section">
+                            <span class="resume-sidebar__label">address</span>
+                            <p class="resume-sidebar__text"><span id="weather">☀️ --°C</span><br>Vancouver, BC</p>
+                        </div>
+                        
+                        <div class="resume-sidebar__section">
+                            <span class="resume-sidebar__label">email</span>
+                            <p class="resume-sidebar__text">shiwenjiang331<br>@gmail.com</p>
+                        </div>
+                        
+                        <div class="resume-sidebar__section">
+                            <span class="resume-sidebar__label">linkedin</span>
+                            <p class="resume-sidebar__text">linkedin.com/<br>in/shiwen</p>
+                        </div>
+                    </aside>
                     
-                    <div class="experience-list">
-                        <!-- Microsoft -->
-                        <article class="experience-item experience-item--interactive" data-section="microsoft">
-                            <div class="experience-item__header">
-                                <div class="experience-item__left">
+                    <!-- Main Content -->
+                    <div class="resume-main">
+                        <!-- Professional Experience -->
+                        <section class="resume-section">
+                            <h2 class="resume-section__title resume-section__title">Experience</h2>
+                            
+                            <div class="experience-list">
+                                <!-- Microsoft -->
+                                <article class="experience-item experience-item--interactive" data-section="microsoft">
                                     <h3 class="experience-item__company">Microsoft</h3>
-                                    <span class="experience-item__role">Product Designer II</span>
-                                </div>
-                                <span class="experience-item__date">2025 — Present</span>
-                            </div>
-                            <ul class="experience-item__bullets">
-                                <li>Lead design for Microsoft Teams collaboration features, improving meeting experience for 300M+ active users</li>
-                                <li>Established and maintained Fluent Design System components, ensuring consistency across 15+ product teams</li>
-                                <li>Championed accessibility initiatives achieving WCAG 2.1 AAA compliance</li>
-                            </ul>
-                        </article>
+                                    <p class="experience-item__meta">Product Designer II | Apr. 2025 - Present</p>
+                                    <p class="experience-item__description">Lead design for Microsoft Teams collaboration features, improving meeting experience for 300M+ active users. Established and maintained Fluent Design System components, ensuring consistency across 15+ product teams. Championed accessibility initiatives achieving WCAG 2.1 AAA compliance.</p>
+                                </article>
 
-                        <!-- MathWorks -->
-                        <article class="experience-item experience-item--interactive" data-section="mathworks">
-                            <div class="experience-item__header">
-                                <div class="experience-item__left">
+                                <!-- MathWorks -->
+                                <article class="experience-item experience-item--interactive" data-section="mathworks">
                                     <h3 class="experience-item__company">MathWorks</h3>
-                                    <span class="experience-item__role">Product Designer</span>
-                                </div>
-                                <span class="experience-item__date">2022 — 2025</span>
-                            </div>
-                            <ul class="experience-item__bullets">
-                                <li>Designed core features for MATLAB Online, increasing user engagement by 40%</li>
-                                <li>Conducted user research across 12 markets, synthesizing insights to inform product strategy</li>
-                                <li>Mentored 4 junior designers and established design critique processes</li>
-                            </ul>
-                        </article>
+                                    <p class="experience-item__meta">Product Designer | Jun. 2022 - Mar. 2025</p>
+                                    <p class="experience-item__description">Designed core features for MATLAB Online, increasing user engagement by 40%. Conducted user research across 12 markets, synthesizing insights to inform product strategy. Mentored 4 junior designers and established design critique processes.</p>
+                                </article>
 
-                        <!-- Philips -->
-                        <article class="experience-item experience-item--interactive" data-section="philips">
-                            <div class="experience-item__header">
-                                <div class="experience-item__left">
+                                <!-- Philips -->
+                                <article class="experience-item experience-item--interactive" data-section="philips">
                                     <h3 class="experience-item__company">Philips</h3>
-                                    <span class="experience-item__role">Product Design Intern</span>
-                                </div>
-                                <span class="experience-item__date">2021</span>
+                                    <p class="experience-item__meta">Product Design Intern | May 2021 - Aug. 2021</p>
+                                    <p class="experience-item__description">Led redesign of patient monitoring interface, improving nurse workflow efficiency by 25%. Created reusable design system components reducing design-to-development time by 35%.</p>
+                                </article>
                             </div>
-                            <ul class="experience-item__bullets">
-                                <li>Led redesign of patient monitoring interface, improving nurse workflow efficiency by 25%</li>
-                                <li>Created reusable design system components reducing design-to-development time by 35%</li>
+                        </section>
+
+                        <!-- Education -->
+                        <section class="resume-section">
+                            <h2 class="resume-section__title resume-section__title">Education</h2>
+                            
+                            <div class="education-list">
+                                <article class="education-item education-item--interactive" data-section="cmu">
+                                    <h3 class="education-item__school">Carnegie Mellon University</h3>
+                                    <span class="education-item__degree">M.S. Entertainment Technology</span>
+                                </article>
+                                <article class="education-item education-item--interactive" data-section="gatech">
+                                    <h3 class="education-item__school">Georgia Institute of Technology</h3>
+                                    <span class="education-item__degree">B.S. Mechanical Engineering</span>
+                                </article>
+                            </div>
+                        </section>
+
+                        <!-- Skills -->
+                        <section class="resume-section resume-section--interactive" data-section="skills">
+                            <h2 class="resume-section__title resume-section__title">Skills</h2>
+                            
+                            <ul class="skills-list skills-list--bullets">
+                                <li>Expertise in Figma, Sketch, Adobe Creative Suite</li>
+                                <li>Deep expertise in Design Systems and Component Libraries</li>
+                                <li>Experience with HTML/CSS, JavaScript, React prototyping</li>
+                                <li>Strong background in User Research, Usability Testing, A/B Testing</li>
+                                <li>Applying knowledge of accessibility standards and inclusive design</li>
+                                <li>Is self-motivated, passionate with a high energy level</li>
                             </ul>
-                        </article>
+                        </section>
                     </div>
-                </section>
-
-                <!-- Two Column Section -->
-                <div class="resume-columns">
-                    <!-- Education -->
-                    <section class="resume-section resume-section--half">
-                        <h2 class="resume-section__title">EDUCATION</h2>
-                        <hr class="resume-divider">
-                        
-                        <div class="education-list">
-                            <article class="education-item education-item--interactive" data-section="cmu">
-                                <h3 class="education-item__degree">M.S. Entertainment Technology</h3>
-                                <span class="education-item__school">Carnegie Mellon University</span>
-                                <span class="education-item__year">2020 — 2022</span>
-                            </article>
-                            <article class="education-item education-item--interactive" data-section="gatech">
-                                <h3 class="education-item__degree">B.S. Mechanical Engineering</h3>
-                                <span class="education-item__school">Georgia Institute of Technology</span>
-                                <span class="education-item__year">2016 — 2020</span>
-                            </article>
-                        </div>
-                    </section>
-
-                    <!-- Skills -->
-                    <section class="resume-section resume-section--half resume-section--interactive" data-section="skills">
-                        <h2 class="resume-section__title">SKILLS</h2>
-                        <hr class="resume-divider">
-                        
-                        <div class="skills-list">
-                            <div class="skill-row">
-                                <span class="skill-row__label">Design</span>
-                                <span class="skill-row__value">Figma, Sketch, Adobe CC, Prototyping, Design Systems</span>
-                            </div>
-                            <div class="skill-row">
-                                <span class="skill-row__label">Technical</span>
-                                <span class="skill-row__value">HTML/CSS, JavaScript, React, User Research</span>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </article>
             
