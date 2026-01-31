@@ -1218,7 +1218,7 @@
                       "fill": "#FAFAFA",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 1,
+                        "thickness": 0,
                         "fill": "#E0E0E0"
                       },
                       "layout": "vertical",
@@ -1268,7 +1268,9 @@
                       "fill": "#F5F5F5",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 2,
+                        "thickness": {
+                          "left": 1
+                        },
                         "fill": "#1A1A1A"
                       },
                       "layout": "vertical",
@@ -1449,7 +1451,7 @@
                       "fill": "#FAFAFA",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 1,
+                        "thickness": 0,
                         "fill": "#E0E0E0"
                       },
                       "layout": "vertical",
@@ -1557,7 +1559,9 @@
                       "fill": "#F5F5F5",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 2,
+                        "thickness": {
+                          "left": 1
+                        },
                         "fill": "#1A1A1A"
                       },
                       "layout": "vertical",
@@ -1736,7 +1740,7 @@
                       "fill": "#FAFAFA",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 1,
+                        "thickness": 0,
                         "fill": "#E0E0E0"
                       },
                       "layout": "vertical",
@@ -1784,7 +1788,9 @@
                       "fill": "#F5F5F5",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 2,
+                        "thickness": {
+                          "left": 1
+                        },
                         "fill": "#1A1A1A"
                       },
                       "layout": "vertical",
@@ -1934,7 +1940,7 @@
                       "fill": "#FAFAFA",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 1,
+                        "thickness": 0,
                         "fill": "#E0E0E0"
                       },
                       "layout": "vertical",
@@ -2013,7 +2019,9 @@
                       "fill": "#F5F5F5",
                       "stroke": {
                         "align": "inside",
-                        "thickness": 2,
+                        "thickness": {
+                          "left": 1
+                        },
                         "fill": "#1A1A1A"
                       },
                       "layout": "vertical",
@@ -2813,7 +2821,7 @@
                               "id": "7ffFd",
                               "name": "eduYear",
                               "fill": "#9A9A9A",
-                              "content": "2020 — 202",
+                              "content": "2020 — 2022",
                               "fontFamily": "Inter",
                               "fontSize": 9,
                               "fontWeight": "normal"
