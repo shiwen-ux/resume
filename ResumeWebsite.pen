@@ -1,0 +1,2987 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "2MIom",
+      "x": 0,
+      "y": 0,
+      "name": "Design System",
+      "width": 1800,
+      "fill": "#E8E8E8",
+      "layout": "vertical",
+      "gap": 48,
+      "padding": 48,
+      "children": [
+        {
+          "type": "text",
+          "id": "8lZgS",
+          "name": "dsTitle",
+          "fill": "#1A1A1A",
+          "content": "Design System — Paper Resume",
+          "fontFamily": "Source Serif 4",
+          "fontSize": 32,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "K1hQb",
+          "name": "dsSubtitle",
+          "fill": "#6B6B6B",
+          "content": "Traditional resume components for a professional paper-style layout",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "frame",
+          "id": "ZeO70",
+          "name": "Buttons",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "si1vq",
+              "name": "btnLabel",
+              "fill": "#1A1A1A",
+              "content": "Buttons",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "AaWgP",
+              "name": "btnRow",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "bDYWl",
+                  "name": "Button/Primary",
+                  "reusable": true,
+                  "fill": "#1A1A1A",
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "cOLyy",
+                      "name": "label",
+                      "fill": "#FFFFFF",
+                      "content": "Primary Button",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "w33eQ",
+                  "name": "Button/Secondary",
+                  "reusable": true,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#1A1A1A"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WQVT4",
+                      "name": "label",
+                      "fill": "#1A1A1A",
+                      "content": "Secondary Button",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "1uIcV",
+                  "name": "Button/Ghost",
+                  "reusable": true,
+                  "gap": 8,
+                  "padding": [
+                    10,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ClKwf",
+                      "name": "label",
+                      "fill": "#6B6B6B",
+                      "content": "Ghost Button",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "mNgZu",
+          "name": "Cards",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "h9Me2",
+              "name": "cardLabel",
+              "fill": "#1A1A1A",
+              "content": "Cards",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "nu4QX",
+              "name": "cardRow",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zsgY7",
+                  "name": "Card/Base",
+                  "reusable": true,
+                  "width": 360,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  },
+                  "layout": "vertical",
+                  "gap": 16,
+                  "padding": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RNHg9",
+                      "name": "header",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 8,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xe154",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "Card Title",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YrmAB",
+                          "name": "description",
+                          "fill": "#6B6B6B",
+                          "content": "Card description text goes here with supporting details.",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OQjYY",
+                      "name": "content",
+                      "slot": [],
+                      "width": "fill_container",
+                      "height": "fit_content(100)",
+                      "layout": "vertical"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "V5wfF",
+                  "name": "Card/Project",
+                  "reusable": true,
+                  "width": 400,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Iiob0",
+                      "name": "thumbnail",
+                      "width": "fill_container",
+                      "height": 220,
+                      "fill": "#F5F5F5",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mFW22",
+                          "name": "projImgText",
+                          "fill": "#9A9A9A",
+                          "content": "Project Image",
+                          "fontFamily": "Inter",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4SSGu",
+                      "name": "content",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "C8ljF",
+                          "name": "tag",
+                          "fill": "#F5F5F5",
+                          "padding": [
+                            4,
+                            10
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "vjh0V",
+                              "name": "tagLabel",
+                              "fill": "#6B6B6B",
+                              "content": "Product Design",
+                              "fontFamily": "Inter",
+                              "fontSize": 9,
+                              "fontWeight": "500",
+                              "letterSpacing": 1
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "mkYrx",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "Project Title",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Yfpfm",
+                          "name": "description",
+                          "fill": "#6B6B6B",
+                          "content": "Brief description of the project and its impact.",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zV7qE",
+          "name": "Badges & Tags",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "UJ4Wk",
+              "name": "badgeLabel",
+              "fill": "#1A1A1A",
+              "content": "Badges & Tags",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Sdqau",
+              "name": "badgeRow",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wrgZP",
+                  "name": "Badge/Skill",
+                  "reusable": true,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  },
+                  "gap": 8,
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "GIVb4",
+                      "name": "icon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "figma",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "D1j92",
+                      "name": "label",
+                      "fill": "#1A1A1A",
+                      "content": "Figma",
+                      "fontFamily": "Inter",
+                      "fontSize": 10,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IciWa",
+                  "name": "Tag/Primary",
+                  "reusable": true,
+                  "fill": "#F5F5F5",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GKbFJ",
+                      "name": "label",
+                      "fill": "#6B6B6B",
+                      "content": "UX Design",
+                      "fontFamily": "Inter",
+                      "fontSize": 9,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "YOTkO",
+                  "name": "Tag/Success",
+                  "reusable": true,
+                  "fill": "#F5F5F5",
+                  "padding": [
+                    6,
+                    12
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "BzrzK",
+                      "name": "label",
+                      "fill": "#1A1A1A",
+                      "content": "Available",
+                      "fontFamily": "Inter",
+                      "fontSize": 9,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yIBaS",
+          "name": "Experience Components",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "F3HuI",
+              "name": "expLabel",
+              "fill": "#1A1A1A",
+              "content": "Experience Components",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "fuHft",
+              "name": "Card/Experience",
+              "reusable": true,
+              "width": 700,
+              "fill": "#FFFFFF",
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "#E0E0E0"
+              },
+              "gap": 24,
+              "padding": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zHyQx",
+                  "name": "timeline",
+                  "width": 120,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SbTqD",
+                      "name": "dateRange",
+                      "fill": "#6B6B6B",
+                      "content": "2022 — Present",
+                      "fontFamily": "Inter",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sGPdt",
+                      "name": "duration",
+                      "fill": "#9A9A9A",
+                      "content": "3 years",
+                      "fontFamily": "Inter",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xbu7p",
+                  "name": "details",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "O1Evl",
+                      "name": "expCompany",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xTj0K",
+                          "name": "logo",
+                          "width": 40,
+                          "height": 40,
+                          "fill": "#F5F5F5",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "857Px",
+                              "name": "expLogoText",
+                              "fill": "#1A1A1A",
+                              "content": "MS",
+                              "fontFamily": "Inter",
+                              "fontSize": 14,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "XSEPf",
+                          "name": "company",
+                          "fill": "#1A1A1A",
+                          "content": "Microsoft",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "wRpY6",
+                      "name": "role",
+                      "fill": "#1A1A1A",
+                      "content": "Senior Product Designer",
+                      "fontFamily": "Source Serif 4",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "43S9t",
+                      "name": "description",
+                      "fill": "#6B6B6B",
+                      "content": "Leading design for enterprise products, focusing on user experience and design systems.",
+                      "fontFamily": "Source Serif 4",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "CDXZ3",
+          "name": "Navigation Components",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "guXqr",
+              "name": "navLabel",
+              "fill": "#1A1A1A",
+              "content": "Navigation Components",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "CyrJr",
+              "name": "Nav/Header",
+              "reusable": true,
+              "width": 1200,
+              "height": 72,
+              "fill": "#FFFFFF",
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#E0E0E0"
+              },
+              "padding": [
+                0,
+                48
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "x6uZh",
+                  "name": "brand",
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "f35l0",
+                      "name": "logoIcon",
+                      "width": 36,
+                      "height": 36,
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pbysa",
+                      "name": "logoText",
+                      "fill": "#FFFFFF",
+                      "content": "JD",
+                      "fontFamily": "Source Serif 4",
+                      "fontSize": 14,
+                      "fontWeight": "700"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "cLoF7",
+                  "name": "links",
+                  "gap": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "pVS3k",
+                      "name": "link1",
+                      "fill": "#1A1A1A",
+                      "content": "About",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "9ukUg",
+                      "name": "link2",
+                      "fill": "#6B6B6B",
+                      "content": "Experience",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r26Mu",
+                      "name": "link3",
+                      "fill": "#6B6B6B",
+                      "content": "Projects",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UZVKT",
+                      "name": "link4",
+                      "fill": "#6B6B6B",
+                      "content": "Skills",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "id": "6vJMW",
+                  "type": "ref",
+                  "ref": "bDYWl",
+                  "name": "navCta",
+                  "descendants": {
+                    "cOLyy": {
+                      "content": "Contact Me"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "24JRe",
+          "name": "Section Headers",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "gRXuz",
+              "name": "secLabel",
+              "fill": "#1A1A1A",
+              "content": "Section Headers",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "qEH9R",
+              "name": "Section/Header",
+              "reusable": true,
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Hics1",
+                  "name": "number",
+                  "fill": "#1A1A1A",
+                  "content": "01",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "YdvAy",
+                  "name": "title",
+                  "fill": "#1A1A1A",
+                  "content": "Section Title",
+                  "fontFamily": "Source Serif 4",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "txzWJ",
+                  "name": "description",
+                  "fill": "#6B6B6B",
+                  "content": "Supporting description for the section goes here.",
+                  "fontFamily": "Source Serif 4",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "0VZsM",
+              "name": "Divider",
+              "reusable": true,
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#E0E0E0"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "pQJdT",
+          "name": "Social & Links",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "children": [
+            {
+              "type": "text",
+              "id": "vVjWi",
+              "name": "socialLabel",
+              "fill": "#1A1A1A",
+              "content": "Social & Links",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "Tcxg3",
+              "name": "socialRow",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SfCq3",
+                  "name": "Social/Icon",
+                  "reusable": true,
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "0dqXD",
+                      "name": "icon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "linkedin",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "PlKoR",
+                  "name": "Link/Text",
+                  "reusable": true,
+                  "gap": 8,
+                  "padding": [
+                    8,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "hcPkG",
+                      "name": "icon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "arrow-up-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#1A1A1A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "QU5ps",
+                      "name": "label",
+                      "fill": "#1A1A1A",
+                      "content": "View LinkedIn",
+                      "fontFamily": "Inter",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "i2NO8",
+          "name": "Resume Sections",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "children": [
+            {
+              "type": "text",
+              "id": "QSWu8",
+              "name": "resumeSectionsLabel",
+              "fill": "#1A1A1A",
+              "content": "Resume Section Components",
+              "fontFamily": "Source Serif 4",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "PDOJ8",
+              "name": "State Labels",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "MZ7uK",
+                  "name": "stateLabelsTitle",
+                  "fill": "#1A1A1A",
+                  "content": "Component States Legend",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "wUiEa",
+                  "name": "stateLegendRow",
+                  "gap": 32,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Y3W4x",
+                      "name": "defaultState",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "33DNb",
+                          "name": "dot",
+                          "width": 12,
+                          "height": 12,
+                          "fill": "#FFFFFF",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "quZwP",
+                          "name": "label",
+                          "fill": "#6B6B6B",
+                          "content": "Default",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fRkw2",
+                      "name": "hoverState",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Q3a9P",
+                          "name": "dot",
+                          "width": 12,
+                          "height": 12,
+                          "fill": "#FAFAFA",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "Nc4Ek",
+                          "name": "label",
+                          "fill": "#6B6B6B",
+                          "content": "Hover",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ubZJc",
+                      "name": "selectedState",
+                      "gap": 8,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "f34XJ",
+                          "name": "dot",
+                          "width": 12,
+                          "height": 12,
+                          "fill": "#F5F5F5",
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#1A1A1A"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "214hH",
+                          "name": "label",
+                          "fill": "#1A1A1A",
+                          "content": "Selected",
+                          "fontFamily": "Inter",
+                          "fontSize": 12,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "gzukw",
+              "name": "resumeSectionsDesc",
+              "fill": "#6B6B6B",
+              "content": "Reusable section components with Default, Hover, and Selected states",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "iKaLL",
+              "name": "Section/Header Component",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Dhzxg",
+                  "name": "headerCompLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Resume Header",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "6LuuJ",
+                  "name": "headerStatesRow",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "0RKOL",
+                      "name": "Resume/Header",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#FFFFFF",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "bottom": 1
+                        },
+                        "fill": "#1A1A1A"
+                      },
+                      "layout": "vertical",
+                      "gap": 8,
+                      "padding": 24,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZkHvm",
+                          "name": "name",
+                          "fill": "#1A1A1A",
+                          "content": "Your Name",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 36,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I9Ekm",
+                          "name": "contactRow",
+                          "gap": 24,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "j6fRv",
+                              "name": "contact1",
+                              "fill": "#6B6B6B",
+                              "content": "Location",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "zczaC",
+                              "name": "contact2",
+                              "fill": "#6B6B6B",
+                              "content": "email@example.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Q3vCt",
+                              "name": "contact3",
+                              "fill": "#6B6B6B",
+                              "content": "linkedin.com/in/you",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "neFRF",
+                              "name": "contact4",
+                              "fill": "#6B6B6B",
+                              "content": "portfolio.com",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "o87NH",
+              "name": "Section/Summary Component",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LZMrW",
+                  "name": "summaryCompLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Summary Section (Default / Hover / Selected)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "rN91x",
+                  "name": "summaryStatesRow",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "VQkE6",
+                      "name": "Section/Summary",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#FFFFFF",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "t2AVb",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "PROFESSIONAL SUMMARY",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "L7w0M",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#E0E0E0"
+                        },
+                        {
+                          "type": "text",
+                          "id": "S3tof",
+                          "name": "content",
+                          "fill": "#3A3A3A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Product designer with 8+ years of experience creating intuitive digital experiences...",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jfx9p",
+                      "name": "Section/Summary:hover",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#FAFAFA",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "enFNC",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "PROFESSIONAL SUMMARY",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BxrkO",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#D0D0D0"
+                        },
+                        {
+                          "type": "text",
+                          "id": "FvQy3",
+                          "name": "content",
+                          "fill": "#3A3A3A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Product designer with 8+ years of experience creating intuitive digital experiences...",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hbI0x",
+                      "name": "Section/Summary:selected",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#1A1A1A"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "dScRQ",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "PROFESSIONAL SUMMARY",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tAQQk",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#1A1A1A"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RPg5A",
+                          "name": "content",
+                          "fill": "#1A1A1A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Product designer with 8+ years of experience creating intuitive digital experiences...",
+                          "lineHeight": 1.7,
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "5OpCg",
+              "name": "Section/Experience Component",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "dyy1q",
+                  "name": "expCompLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Experience Item (Default / Hover / Selected)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "A5SXb",
+                  "name": "expStatesRow",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "FSnh5",
+                      "name": "Item/Experience",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#FFFFFF",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "H6Tzz",
+                          "name": "header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "f4Lu0",
+                              "name": "left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "3ji34",
+                                  "name": "company",
+                                  "fill": "#1A1A1A",
+                                  "content": "Company Name",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "VigdL",
+                                  "name": "role",
+                                  "fill": "#6B6B6B",
+                                  "content": "Job Title",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "YBmiZ",
+                              "name": "date",
+                              "fill": "#6B6B6B",
+                              "content": "2022 — Present",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "952SA",
+                          "name": "bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "CtzGv",
+                              "name": "bullet1",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Achievement or responsibility description here",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "aUlN1",
+                              "name": "bullet2",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Another key accomplishment with metrics",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dDIMT",
+                      "name": "Item/Experience:hover",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#FAFAFA",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "1WGtg",
+                          "name": "header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "QeClp",
+                              "name": "left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "Ev1tS",
+                                  "name": "company",
+                                  "fill": "#1A1A1A",
+                                  "content": "Company Name",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "1PbA5",
+                                  "name": "role",
+                                  "fill": "#6B6B6B",
+                                  "content": "Job Title",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "EhXxI",
+                              "name": "date",
+                              "fill": "#6B6B6B",
+                              "content": "2022 — Present",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ILxGp",
+                          "name": "bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "8IGyd",
+                              "name": "bullet1",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Achievement or responsibility description here",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "emQj5",
+                              "name": "bullet2",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Another key accomplishment with metrics",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hBfjC",
+                      "name": "Item/Experience:selected",
+                      "reusable": true,
+                      "width": 500,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#1A1A1A"
+                      },
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "AsLy6",
+                          "name": "header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "11GQT",
+                              "name": "left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "yMlHK",
+                                  "name": "company",
+                                  "fill": "#1A1A1A",
+                                  "content": "Company Name",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "ca7cT",
+                                  "name": "role",
+                                  "fill": "#3A3A3A",
+                                  "content": "Job Title",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "HGbR3",
+                              "name": "date",
+                              "fill": "#1A1A1A",
+                              "content": "2022 — Present",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ubCgF",
+                          "name": "bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "N9Yzd",
+                              "name": "bullet1",
+                              "fill": "#1A1A1A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Achievement or responsibility description here",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "2joOC",
+                              "name": "bullet2",
+                              "fill": "#1A1A1A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Another key accomplishment with metrics",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "RmDxz",
+              "name": "Section/Education Component",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9sHue",
+                  "name": "eduCompLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Education Item (Default / Hover / Selected)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "9kHEf",
+                  "name": "eduStatesRow",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ZRnx7",
+                      "name": "Item/Education",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#FFFFFF",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "lZpkK",
+                          "name": "degree",
+                          "fill": "#1A1A1A",
+                          "content": "M.S. Degree Name",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Za5xG",
+                          "name": "school",
+                          "fill": "#6B6B6B",
+                          "content": "University Name",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "8UxhO",
+                          "name": "year",
+                          "fill": "#9A9A9A",
+                          "content": "2020 — 2022",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AfERn",
+                      "name": "Item/Education:hover",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#FAFAFA",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ejNLb",
+                          "name": "degree",
+                          "fill": "#1A1A1A",
+                          "content": "M.S. Degree Name",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kvMVK",
+                          "name": "school",
+                          "fill": "#6B6B6B",
+                          "content": "University Name",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "BObQa",
+                          "name": "year",
+                          "fill": "#9A9A9A",
+                          "content": "2020 — 2022",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Cck2q",
+                      "name": "Item/Education:selected",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#1A1A1A"
+                      },
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Fyfzp",
+                          "name": "degree",
+                          "fill": "#1A1A1A",
+                          "content": "M.S. Degree Name",
+                          "fontFamily": "Source Serif 4",
+                          "fontSize": 10,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "70nQ4",
+                          "name": "school",
+                          "fill": "#3A3A3A",
+                          "content": "University Name",
+                          "fontFamily": "Inter",
+                          "fontSize": 10,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "text",
+                          "id": "Gfftk",
+                          "name": "year",
+                          "fill": "#1A1A1A",
+                          "content": "2020 — 2022",
+                          "fontFamily": "Inter",
+                          "fontSize": 9,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hGUYu",
+              "name": "Section/Skills Component",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FDsui",
+                  "name": "skillCompLabel",
+                  "fill": "#1A1A1A",
+                  "content": "Skills Section (Default / Hover / Selected)",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "ZxCk6",
+                  "name": "skillStatesRow",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "25sUx",
+                      "name": "Section/Skills",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#FFFFFF",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "IiLar",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "SKILLS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "xUodJ",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#E0E0E0"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "BqAJQ",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Te3JP",
+                              "name": "skillRow1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "qBLmA",
+                                  "name": "label",
+                                  "fill": "#1A1A1A",
+                                  "content": "Category:",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "wBi65",
+                                  "name": "value",
+                                  "fill": "#3A3A3A",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Skill 1, Skill 2, Skill 3",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "gjr5P",
+                      "name": "Section/Skills:hover",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#FAFAFA",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Cdxh4",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "SKILLS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "M0TP6",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#D0D0D0"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "4qMqC",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "rRaNG",
+                              "name": "skillRow1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "iOSzJ",
+                                  "name": "label",
+                                  "fill": "#1A1A1A",
+                                  "content": "Category:",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "FhJck",
+                                  "name": "value",
+                                  "fill": "#3A3A3A",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Skill 1, Skill 2, Skill 3",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "PaXMh",
+                      "name": "Section/Skills:selected",
+                      "reusable": true,
+                      "width": 300,
+                      "fill": "#F5F5F5",
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#1A1A1A"
+                      },
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "82MjE",
+                          "name": "title",
+                          "fill": "#1A1A1A",
+                          "content": "SKILLS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Z74mf",
+                          "name": "divider",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#1A1A1A"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lbswQ",
+                          "name": "content",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "Z7Wia",
+                              "name": "skillRow1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "ph8sq",
+                                  "name": "label",
+                                  "fill": "#1A1A1A",
+                                  "content": "Category:",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "oPtm8",
+                                  "name": "value",
+                                  "fill": "#1A1A1A",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Skill 1, Skill 2, Skill 3",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "0gn5r",
+      "x": 1900,
+      "y": 0,
+      "name": "Resume Portfolio Website",
+      "clip": true,
+      "width": 1440,
+      "fill": "#E8E8E8",
+      "layout": "vertical",
+      "padding": [
+        60,
+        0
+      ],
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Rt9ZU",
+          "name": "Resume Paper",
+          "width": 728,
+          "height": 928,
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            60,
+            72
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "yC9n6",
+              "name": "Header",
+              "width": "fill_container",
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#1A1A1A"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": [
+                0,
+                0,
+                24,
+                0
+              ],
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "l5rXY",
+                  "name": "headerName",
+                  "fill": "#1A1A1A",
+                  "content": "Shiwen Jiang",
+                  "fontFamily": "Source Serif 4",
+                  "fontSize": 36,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "hmmUp",
+                  "name": "headerContact",
+                  "gap": 24,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "aFpYL",
+                      "name": "contact1",
+                      "fill": "#6B6B6B",
+                      "content": "Vancouver, CA",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "OoP02",
+                      "name": "contact2",
+                      "fill": "#6B6B6B",
+                      "content": "shiwenjiang331@gmail.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fh0c2",
+                      "name": "contact3",
+                      "fill": "#6B6B6B",
+                      "content": "linkedin.com/in/johndoe",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5J64t",
+                      "name": "contact4",
+                      "fill": "#6B6B6B",
+                      "content": "portfolio.com",
+                      "fontFamily": "Inter",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "faBap",
+              "name": "Summary Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "sC9X8",
+                  "name": "summaryTitle",
+                  "fill": "#1A1A1A",
+                  "content": "PROFESSIONAL SUMMARY",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "ylcnS",
+                  "name": "summaryLine",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E0E0E0"
+                },
+                {
+                  "type": "text",
+                  "id": "M1w7P",
+                  "name": "summaryText",
+                  "fill": "#3A3A3A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Product designer with 8+ years of experience creating intuitive digital experiences for enterprise products. Currently leading design initiatives at Microsoft, focusing on collaboration tools that reach 300M+ users worldwide. Expertise in design systems, accessibility, and user research. Passionate about transforming complex problems into elegant, user-centered solutions.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Source Serif 4",
+                  "fontSize": 11,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "r6SlA",
+              "name": "Experience Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9wMj5",
+                  "name": "expTitle",
+                  "fill": "#1A1A1A",
+                  "content": "PROFESSIONAL EXPERIENCE",
+                  "fontFamily": "Inter",
+                  "fontSize": 11,
+                  "fontWeight": "600",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "JSJ5q",
+                  "name": "expLine",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#E0E0E0"
+                },
+                {
+                  "type": "frame",
+                  "id": "Tn0XX",
+                  "name": "expList",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sRc6b",
+                      "name": "exp1",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "LDsNb",
+                          "name": "exp1Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "xh4ui",
+                              "name": "exp1Left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "EudSa",
+                                  "name": "exp1Role",
+                                  "fill": "#1A1A1A",
+                                  "content": "Microsoft",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "RjrZm",
+                                  "name": "exp1Company",
+                                  "fill": "#6B6B6B",
+                                  "content": "Product Designer II",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "BqNWE",
+                              "name": "exp1Date",
+                              "fill": "#6B6B6B",
+                              "content": "2025 — Present",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "uw81k",
+                          "name": "exp1Bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "udHbU",
+                              "name": "exp1b1",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Lead design for Microsoft Teams collaboration features, improving meeting experience for 300M+ active users",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "3N2EJ",
+                              "name": "exp1b2",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Established and maintained Fluent Design System components, ensuring consistency across 15+ product teams",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "vmh3s",
+                              "name": "exp1b3",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Championed accessibility initiatives achieving WCAG 2.1 AAA compliance, recognized with Microsoft's Accessibility Award",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e5ZS1",
+                      "name": "exp2",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "TE1Ql",
+                          "name": "exp2Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "UidY6",
+                              "name": "exp2Left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "vDZ5v",
+                                  "name": "exp2Role",
+                                  "fill": "#1A1A1A",
+                                  "content": "MathWorks",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "Gly62",
+                                  "name": "exp2Company",
+                                  "fill": "#6B6B6B",
+                                  "content": "Product Designer",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "C8H1P",
+                              "name": "exp2Date",
+                              "fill": "#6B6B6B",
+                              "content": "2022 — 2025",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "3fxga",
+                          "name": "exp2Bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "buTn5",
+                              "name": "exp2b1",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Designed core features for Spotify Premium including personalized playlists and social sharing, increasing user engagement by 40%",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "thbKC",
+                              "name": "exp2b2",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Conducted user research across 12 markets, synthesizing insights to inform product strategy and roadmap decisions",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "P3UgW",
+                              "name": "exp2b3",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Mentored 4 junior designers and established design critique processes adopted across the organization",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "aeTmk",
+                      "name": "exp3",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "IEPUO",
+                          "name": "exp3Header",
+                          "width": "fill_container",
+                          "justifyContent": "space_between",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "vpptV",
+                              "name": "exp3Left",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "X3Mvc",
+                                  "name": "exp3Role",
+                                  "fill": "#1A1A1A",
+                                  "content": "Philips",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 12,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "EhWs8",
+                                  "name": "exp3Company",
+                                  "fill": "#6B6B6B",
+                                  "content": "Product Design Intern",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 11,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "IPWze",
+                              "name": "exp3Date",
+                              "fill": "#6B6B6B",
+                              "content": "2021",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "VaVqF",
+                          "name": "exp3Bullets",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "padding": [
+                            4,
+                            0,
+                            0,
+                            0
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lhITs",
+                              "name": "exp3b1",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Led redesign of host onboarding experience, resulting in 25% increase in new host signups within first quarter",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "coDfN",
+                              "name": "exp3b2",
+                              "fill": "#3A3A3A",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "• Created reusable design system components reducing design-to-development handoff time by 35%",
+                              "lineHeight": 1.6,
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "oPzFO",
+              "name": "Two Column Section",
+              "width": "fill_container",
+              "gap": 48,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Ax9Vw",
+                  "name": "leftCol",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "7tDYV",
+                      "name": "awardsSection",
+                      "enabled": false,
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "xHhmw",
+                          "name": "awardsTitle",
+                          "fill": "#1A1A1A",
+                          "content": "AWARDS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "2obKa",
+                          "name": "awardsLine",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#E0E0E0"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "9eydd",
+                          "name": "awardsContent",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "sS1Sr",
+                              "name": "award1",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "CgvfJ",
+                                  "name": "award1Name",
+                                  "fill": "#1A1A1A",
+                                  "content": "Microsoft Accessibility Award",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "NSNai",
+                                  "name": "award1Year",
+                                  "fill": "#9A9A9A",
+                                  "content": "2024",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 9,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "QDbRk",
+                              "name": "award2",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "3Zzg6",
+                                  "name": "award2Name",
+                                  "fill": "#1A1A1A",
+                                  "content": "Webby Award — Best UX",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "urAcX",
+                                  "name": "award2Year",
+                                  "fill": "#9A9A9A",
+                                  "content": "2021",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 9,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "jABUK",
+                              "name": "award3",
+                              "layout": "vertical",
+                              "gap": 2,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "W9qFS",
+                                  "name": "award3Name",
+                                  "fill": "#1A1A1A",
+                                  "content": "AIGA Design Award",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "CZcTQ",
+                                  "name": "award3Year",
+                                  "fill": "#9A9A9A",
+                                  "content": "2019",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 9,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZURvX",
+                      "name": "eduSection",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ZR1RV",
+                          "name": "eduTitle",
+                          "fill": "#1A1A1A",
+                          "content": "EDUCATION",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "irfBE",
+                          "name": "eduLine",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#E0E0E0"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "RlEPy",
+                          "name": "eduContent",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "8UmkB",
+                              "name": "eduDegree",
+                              "fill": "#1A1A1A",
+                              "content": "M.S. Entertainment Technology",
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "qoOo1",
+                              "name": "eduSchool",
+                              "fill": "#6B6B6B",
+                              "content": "Carnegie Mellon University",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "7ffFd",
+                              "name": "eduYear",
+                              "fill": "#9A9A9A",
+                              "content": "2020 — 202",
+                              "fontFamily": "Inter",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "hwbYx",
+                          "name": "eduContent2",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 4,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Dfj3U",
+                              "name": "eduDegree2",
+                              "fill": "#1A1A1A",
+                              "content": "B.A. Mechanical Engineering",
+                              "fontFamily": "Source Serif 4",
+                              "fontSize": 10,
+                              "fontWeight": "600"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ImJ2T",
+                              "name": "eduSchool2",
+                              "fill": "#6B6B6B",
+                              "content": "Georgia Institute of Technology",
+                              "fontFamily": "Inter",
+                              "fontSize": 10,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "JA6PB",
+                              "name": "eduYear2",
+                              "fill": "#9A9A9A",
+                              "content": "2016 — 2019",
+                              "fontFamily": "Inter",
+                              "fontSize": 9,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tCOjy",
+                  "name": "rightCol",
+                  "width": 220,
+                  "layout": "vertical",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "aPCI3",
+                      "name": "skillsSection",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "mv052",
+                          "name": "skillsTitle",
+                          "fill": "#1A1A1A",
+                          "content": "SKILLS",
+                          "fontFamily": "Inter",
+                          "fontSize": 11,
+                          "fontWeight": "600",
+                          "letterSpacing": 2
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SfMsY",
+                          "name": "skillsLine",
+                          "width": "fill_container",
+                          "height": 1,
+                          "fill": "#E0E0E0"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "4zCsh",
+                          "name": "skillsContent",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 8,
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "POkKX",
+                              "name": "skillRow1",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "VgliN",
+                                  "name": "skillLabel1",
+                                  "fill": "#1A1A1A",
+                                  "content": "Design:",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "7S8n0",
+                                  "name": "skillValue1",
+                                  "fill": "#3A3A3A",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "Figma, Sketch, Adobe XD, Photoshop, Illustrator, After Effects",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "VlDhQ",
+                              "name": "skillRow3",
+                              "width": "fill_container",
+                              "layout": "vertical",
+                              "gap": 8,
+                              "children": [
+                                {
+                                  "type": "text",
+                                  "id": "euffZ",
+                                  "name": "skillLabel3",
+                                  "fill": "#1A1A1A",
+                                  "content": "Technical:",
+                                  "fontFamily": "Inter",
+                                  "fontSize": 10,
+                                  "fontWeight": "600"
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "uvr2h",
+                                  "name": "skillValue3",
+                                  "fill": "#3A3A3A",
+                                  "textGrowth": "fixed-width",
+                                  "width": "fill_container",
+                                  "content": "HTML/CSS, JavaScript, React, Design Systems, Accessibility (WCAG)",
+                                  "fontFamily": "Source Serif 4",
+                                  "fontSize": 10,
+                                  "fontWeight": "normal"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

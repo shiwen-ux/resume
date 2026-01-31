@@ -1,0 +1,398 @@
+/* CSS Variables */
+:root {
+    --color-primary: #1A1A1A;
+    --color-secondary: #6B6B6B;
+    --color-body: #3A3A3A;
+    --color-muted: #9A9A9A;
+    --color-divider: #E0E0E0;
+    --color-background: #E8E8E8;
+    --color-paper: #FFFFFF;
+    --color-hover: #FAFAFA;
+    --color-selected: #F5F5F5;
+    
+    --font-serif: 'Source Serif 4', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    color: var(--color-primary);
+}
+
+/* Page Background */
+.page-background {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Resume Paper */
+.resume-paper {
+    width: 100%;
+    max-width: 728px;
+    background-color: var(--color-paper);
+    padding: 60px 72px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.header-name {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.header-contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    font-size: 11px;
+    color: var(--color-secondary);
+}
+
+/* Section Styles */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-line {
+    height: 1px;
+    background-color: var(--color-divider);
+    width: 100%;
+    transition: background-color 0.2s ease;
+}
+
+/* Interactive Section States */
+.section-interactive {
+    padding: 16px;
+    margin: -16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.section-interactive:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-divider);
+}
+
+.section-interactive:hover .section-line {
+    background-color: #D0D0D0;
+}
+
+.section-interactive.selected {
+    background-color: var(--color-selected);
+    border: 2px solid var(--color-primary);
+}
+
+.section-interactive.selected .section-line {
+    background-color: var(--color-primary);
+}
+
+.section-interactive.selected .summary-text,
+.section-interactive.selected .skill-value {
+    color: var(--color-primary);
+}
+
+/* Summary */
+.summary-text {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-body);
+    line-height: 1.7;
+}
+
+/* Experience */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Interactive Item States */
+.item-interactive {
+    padding: 16px;
+    margin: -16px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.item-interactive:hover {
+    background-color: var(--color-hover);
+    border-color: var(--color-divider);
+}
+
+.item-interactive.selected {
+    background-color: var(--color-selected);
+    border: 2px solid var(--color-primary);
+}
+
+.item-interactive.selected .experience-role,
+.item-interactive.selected .education-school {
+    color: var(--color-body);
+    font-weight: 500;
+}
+
+.item-interactive.selected .experience-date,
+.item-interactive.selected .education-year {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.item-interactive.selected .experience-bullets li {
+    color: var(--color-primary);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.experience-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.experience-company {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.experience-role {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--color-secondary);
+}
+
+.experience-date {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-secondary);
+}
+
+.experience-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 4px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.experience-bullets li {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-body);
+    line-height: 1.6;
+}
+
+.experience-bullets li::before {
+    content: "• ";
+}
+
+/* Two Column Section */
+.two-column-section {
+    display: flex;
+    gap: 48px;
+}
+
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.right-column {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Education */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.education-item.item-interactive {
+    margin: -16px;
+    margin-bottom: 0;
+}
+
+.education-item.item-interactive + .education-item.item-interactive {
+    margin-top: -4px;
+}
+
+.education-item + .education-item {
+    margin-top: 12px;
+}
+
+.education-degree {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.education-school {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-secondary);
+}
+
+.education-year {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    font-weight: 400;
+    color: var(--color-muted);
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.skill-value {
+    font-family: var(--font-serif);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--color-body);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resume-paper {
+        padding: 40px 32px;
+    }
+    
+    .two-column-section {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .right-column {
+        width: 100%;
+    }
+    
+    .header-name {
+        font-size: 28px;
+    }
+    
+    .header-contact {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-background {
+        padding: 20px 12px;
+    }
+    
+    .resume-paper {
+        padding: 32px 24px;
+    }
+    
+    .header-contact {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .page-background {
+        background: none;
+        padding: 0;
+    }
+    
+    .resume-paper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+    }
+}
