@@ -38,12 +38,53 @@ body {
     min-height: 100vh;
     background-color: var(--color-background);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 40px 20px;
+}
+
+/* Page Navigation Tabs */
+.page-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tab {
+    padding: 10px 24px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: var(--color-paper);
+    border: 1px solid var(--color-divider);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    background: var(--color-hover);
+}
+
+.tab.active {
+    background: var(--color-primary);
+    color: var(--color-paper);
+    border-color: var(--color-primary);
+}
+
+/* Stacked Papers Container */
+.papers-stack {
+    position: relative;
+    width: 100%;
+    max-width: 728px;
+    height: 1000px;
 }
 
 /* Resume Paper */
 .resume-paper {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     max-width: 728px;
     background-color: var(--color-paper);
@@ -52,6 +93,34 @@ body {
     display: flex;
     flex-direction: column;
     gap: 32px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    max-height: 950px;
+}
+
+/* Paper Stack Positions */
+.paper-front {
+    z-index: 3;
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.paper-back-1 {
+    z-index: 2;
+    transform: translateY(16px) scale(0.97);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.paper-back-2 {
+    z-index: 1;
+    transform: translateY(32px) scale(0.94);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.resume-paper.active {
+    pointer-events: auto;
 }
 
 /* Header */
@@ -343,10 +412,196 @@ body {
     color: var(--color-body);
 }
 
+/* About Page Styles */
+.about-intro {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-body);
+    line-height: 1.8;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.interest-icon {
+    font-size: 20px;
+}
+
+.interest-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-secondary);
+}
+
+.interest-description {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--color-body);
+    line-height: 1.6;
+}
+
+.values-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.value-item {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--color-body);
+    line-height: 1.6;
+}
+
+.value-item strong {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+}
+
+/* Project Details (Microsoft Work Page) */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-divider);
+}
+
+.detail-row {
+    display: flex;
+    gap: 12px;
+}
+
+.detail-label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    min-width: 80px;
+}
+
+.detail-value {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+/* Microsoft Work Page Styles */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    margin: -16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.project-item:hover {
+    background-color: var(--color-hover);
+    border-left: 1px solid var(--color-divider);
+}
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project-name {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.project-role {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+}
+
+.project-description {
+    font-family: var(--font-serif);
+    font-size: 11px;
+    color: var(--color-body);
+    line-height: 1.7;
+}
+
+.project-metrics {
+    display: flex;
+    gap: 24px;
+    padding-top: 8px;
+    border-top: 1px solid var(--color-divider);
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.metric-value {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.metric-label {
+    font-family: var(--font-sans);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--color-secondary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+    .papers-stack {
+        height: auto;
+    }
+    
     .resume-paper {
+        position: relative;
         padding: 40px 32px;
+        max-height: none;
+        display: none;
+    }
+    
+    .resume-paper.active {
+        display: flex;
+    }
+    
+    .paper-back-1,
+    .paper-back-2 {
+        display: none;
     }
     
     .two-column-section {
@@ -365,11 +620,25 @@ body {
     .header-contact {
         gap: 16px;
     }
+    
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
     .page-background {
         padding: 20px 12px;
+    }
+    
+    .page-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .tab {
+        padding: 8px 16px;
+        font-size: 10px;
     }
     
     .resume-paper {
@@ -380,6 +649,15 @@ body {
         flex-direction: column;
         gap: 8px;
         align-items: center;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-metrics {
+        flex-wrap: wrap;
+        gap: 16px;
     }
 }
 

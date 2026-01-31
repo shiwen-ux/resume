@@ -11,137 +11,359 @@
 </head>
 <body>
     <div class="page-background">
-        <div class="resume-paper">
-            <!-- Header -->
-            <header class="header">
-                <h1 class="header-name">Shiwen Jiang</h1>
-                <div class="header-contact">
-                    <span>Vancouver, CA</span>
-                    <span>shiwenjiang331@gmail.com</span>
-                    <span>linkedin.com/in/johndoe</span>
-                    <span>portfolio.com</span>
-                </div>
-            </header>
+        <!-- Page Navigation Tabs -->
+        <nav class="page-tabs">
+            <button class="tab active" data-page="resume">Resume</button>
+            <button class="tab" data-page="about">About Me</button>
+            <button class="tab" data-page="microsoft">Microsoft Work</button>
+        </nav>
 
-            <!-- Professional Summary -->
-            <section class="section section-interactive" data-section="summary">
-                <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
-                <div class="section-line"></div>
-                <p class="summary-text">
-                    Product designer with 8+ years of experience creating intuitive digital experiences for enterprise products. Currently leading design initiatives at Microsoft, focusing on collaboration tools that reach 300M+ users worldwide. Expertise in design systems, accessibility, and user research. Passionate about transforming complex problems into elegant, user-centered solutions.
-                </p>
-            </section>
+        <!-- Stacked Papers Container -->
+        <div class="papers-stack">
+            <!-- Background Paper 2 (furthest back) -->
+            <div class="resume-paper paper-back-2" data-page="microsoft">
+                <!-- Header -->
+                <header class="header">
+                    <h1 class="header-name">Microsoft Work</h1>
+                    <div class="header-contact">
+                        <span>Product Designer II</span>
+                        <span>2025 — Present</span>
+                    </div>
+                </header>
 
-            <!-- Professional Experience -->
-            <section class="section">
-                <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-                <div class="section-line"></div>
-                <div class="experience-list">
-                    <!-- Experience 1 -->
-                    <div class="experience-item item-interactive" data-section="experience-microsoft">
-                        <div class="experience-header">
-                            <div class="experience-left">
-                                <h3 class="experience-company">Microsoft</h3>
-                                <span class="experience-role">Product Designer II</span>
-                            </div>
-                            <span class="experience-date">2025 — Present</span>
+                <!-- Project 1 -->
+                <section class="section">
+                    <h2 class="section-title">MICROSOFT TEAMS REDESIGN</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        Led the complete redesign of Microsoft Teams meeting experience, focusing on improving collaboration for remote and hybrid work scenarios. The project impacted 300M+ active users globally.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Role:</span>
+                            <span class="detail-value">Lead Product Designer</span>
                         </div>
-                        <ul class="experience-bullets">
-                            <li>Lead design for Microsoft Teams collaboration features, improving meeting experience for 300M+ active users</li>
-                            <li>Established and maintained Fluent Design System components, ensuring consistency across 15+ product teams</li>
-                            <li>Championed accessibility initiatives achieving WCAG 2.1 AAA compliance, recognized with Microsoft's Accessibility Award</li>
-                        </ul>
+                        <div class="detail-row">
+                            <span class="detail-label">Duration:</span>
+                            <span class="detail-value">8 months</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Impact:</span>
+                            <span class="detail-value">40% increase in meeting engagement</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project 2 -->
+                <section class="section">
+                    <h2 class="section-title">FLUENT DESIGN SYSTEM</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        Established and maintained core components for Microsoft's Fluent Design System, ensuring visual and interaction consistency across 15+ product teams.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Components:</span>
+                            <span class="detail-value">50+ reusable components</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Adoption:</span>
+                            <span class="detail-value">15 product teams</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project 3 -->
+                <section class="section">
+                    <h2 class="section-title">ACCESSIBILITY INITIATIVE</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        Championed accessibility improvements achieving WCAG 2.1 AAA compliance. Recognized with Microsoft's Accessibility Award for outstanding contributions.
+                    </p>
+                    <div class="project-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Standard:</span>
+                            <span class="detail-value">WCAG 2.1 AAA</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Recognition:</span>
+                            <span class="detail-value">Microsoft Accessibility Award 2024</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Background Paper 1 -->
+            <div class="resume-paper paper-back-1" data-page="about">
+                <!-- Header -->
+                <header class="header">
+                    <h1 class="header-name">About Me</h1>
+                    <div class="header-contact">
+                        <span>Designer • Creator • Problem Solver</span>
+                    </div>
+                </header>
+
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">WHO I AM</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        I'm Shiwen Jiang, a product designer passionate about creating meaningful digital experiences. Originally from China, I've called Vancouver home for the past few years. My journey in design started with a fascination for how technology can solve real human problems.
+                    </p>
+                </section>
+
+                <!-- Philosophy -->
+                <section class="section">
+                    <h2 class="section-title">DESIGN PHILOSOPHY</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        I believe great design is invisible — it should feel so natural that users don't even notice it. My approach combines empathy-driven research with systematic thinking, always keeping accessibility and inclusivity at the forefront.
+                    </p>
+                </section>
+
+                <!-- Interests -->
+                <section class="section">
+                    <h2 class="section-title">BEYOND DESIGN</h2>
+                    <div class="section-line"></div>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <span class="interest-icon">📸</span>
+                            <span class="interest-label">Photography</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">🎮</span>
+                            <span class="interest-label">Gaming</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">🎨</span>
+                            <span class="interest-label">Digital Art</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">🏔️</span>
+                            <span class="interest-label">Hiking</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">☕</span>
+                            <span class="interest-label">Coffee</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">📚</span>
+                            <span class="interest-label">Reading</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Values -->
+                <section class="section">
+                    <h2 class="section-title">WHAT I VALUE</h2>
+                    <div class="section-line"></div>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <strong>Curiosity</strong> — Always asking "why" and exploring new possibilities
+                        </div>
+                        <div class="value-item">
+                            <strong>Empathy</strong> — Understanding users deeply before designing solutions
+                        </div>
+                        <div class="value-item">
+                            <strong>Craft</strong> — Sweating the details that make experiences delightful
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Main Resume Paper (front) -->
+            <div class="resume-paper paper-front active" data-page="resume">
+                <!-- Header -->
+                <header class="header">
+                    <h1 class="header-name">Shiwen Jiang</h1>
+                    <div class="header-contact">
+                        <span class="weather-location"><span id="weather"></span> Vancouver, CA</span>
+                        <span>shiwenjiang331@gmail.com</span>
+                        <span>linkedin.com/in/johndoe</span>
+                        <span>portfolio.com</span>
+                    </div>
+                </header>
+
+                <!-- Professional Summary -->
+                <section class="section section-interactive" data-section="summary">
+                    <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                    <div class="section-line"></div>
+                    <p class="summary-text">
+                        Product designer with 8+ years of experience creating intuitive digital experiences for enterprise products. Currently leading design initiatives at Microsoft, focusing on collaboration tools that reach 300M+ users worldwide. Expertise in design systems, accessibility, and user research. Passionate about transforming complex problems into elegant, user-centered solutions.
+                    </p>
+                </section>
+
+                <!-- Professional Experience -->
+                <section class="section">
+                    <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+                    <div class="section-line"></div>
+                    <div class="experience-list">
+                        <!-- Experience 1 -->
+                        <div class="experience-item item-interactive" data-section="experience-microsoft">
+                            <div class="experience-header">
+                                <div class="experience-left">
+                                    <h3 class="experience-company">Microsoft</h3>
+                                    <span class="experience-role">Product Designer II</span>
+                                </div>
+                                <span class="experience-date">2025 — Present</span>
+                            </div>
+                            <ul class="experience-bullets">
+                                <li>Lead design for Microsoft Teams collaboration features, improving meeting experience for 300M+ active users</li>
+                                <li>Established and maintained Fluent Design System components, ensuring consistency across 15+ product teams</li>
+                                <li>Championed accessibility initiatives achieving WCAG 2.1 AAA compliance, recognized with Microsoft's Accessibility Award</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 2 -->
+                        <div class="experience-item item-interactive" data-section="experience-mathworks">
+                            <div class="experience-header">
+                                <div class="experience-left">
+                                    <h3 class="experience-company">MathWorks</h3>
+                                    <span class="experience-role">Product Designer</span>
+                                </div>
+                                <span class="experience-date">2022 — 2025</span>
+                            </div>
+                            <ul class="experience-bullets">
+                                <li>Designed core features for Spotify Premium including personalized playlists and social sharing, increasing user engagement by 40%</li>
+                                <li>Conducted user research across 12 markets, synthesizing insights to inform product strategy and roadmap decisions</li>
+                                <li>Mentored 4 junior designers and established design critique processes adopted across the organization</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 3 -->
+                        <div class="experience-item item-interactive" data-section="experience-philips">
+                            <div class="experience-header">
+                                <div class="experience-left">
+                                    <h3 class="experience-company">Philips</h3>
+                                    <span class="experience-role">Product Design Intern</span>
+                                </div>
+                                <span class="experience-date">2021</span>
+                            </div>
+                            <ul class="experience-bullets">
+                                <li>Led redesign of host onboarding experience, resulting in 25% increase in new host signups within first quarter</li>
+                                <li>Created reusable design system components reducing design-to-development handoff time by 35%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Two Column Section -->
+                <div class="two-column-section">
+                    <!-- Left Column - Education -->
+                    <div class="left-column">
+                        <section class="section">
+                            <h2 class="section-title">EDUCATION</h2>
+                            <div class="section-line"></div>
+                            <div class="education-list">
+                                <div class="education-item item-interactive" data-section="education-cmu">
+                                    <h3 class="education-degree">M.S. Entertainment Technology</h3>
+                                    <span class="education-school">Carnegie Mellon University</span>
+                                    <span class="education-year">2020 — 2022</span>
+                                </div>
+                                <div class="education-item item-interactive" data-section="education-gatech">
+                                    <h3 class="education-degree">B.A. Mechanical Engineering</h3>
+                                    <span class="education-school">Georgia Institute of Technology</span>
+                                    <span class="education-year">2016 — 2019</span>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
-                    <!-- Experience 2 -->
-                    <div class="experience-item item-interactive" data-section="experience-mathworks">
-                        <div class="experience-header">
-                            <div class="experience-left">
-                                <h3 class="experience-company">MathWorks</h3>
-                                <span class="experience-role">Product Designer</span>
+                    <!-- Right Column - Skills -->
+                    <div class="right-column">
+                        <section class="section section-interactive" data-section="skills">
+                            <h2 class="section-title">SKILLS</h2>
+                            <div class="section-line"></div>
+                            <div class="skills-list">
+                                <div class="skill-row">
+                                    <span class="skill-label">Design:</span>
+                                    <span class="skill-value">Figma, Sketch, Adobe XD, Photoshop, Illustrator, After Effects</span>
+                                </div>
+                                <div class="skill-row">
+                                    <span class="skill-label">Technical:</span>
+                                    <span class="skill-value">HTML/CSS, JavaScript, React, Design Systems, Accessibility (WCAG)</span>
+                                </div>
                             </div>
-                            <span class="experience-date">2022 — 2025</span>
-                        </div>
-                        <ul class="experience-bullets">
-                            <li>Designed core features for Spotify Premium including personalized playlists and social sharing, increasing user engagement by 40%</li>
-                            <li>Conducted user research across 12 markets, synthesizing insights to inform product strategy and roadmap decisions</li>
-                            <li>Mentored 4 junior designers and established design critique processes adopted across the organization</li>
-                        </ul>
+                        </section>
                     </div>
-
-                    <!-- Experience 3 -->
-                    <div class="experience-item item-interactive" data-section="experience-philips">
-                        <div class="experience-header">
-                            <div class="experience-left">
-                                <h3 class="experience-company">Philips</h3>
-                                <span class="experience-role">Product Design Intern</span>
-                            </div>
-                            <span class="experience-date">2021</span>
-                        </div>
-                        <ul class="experience-bullets">
-                            <li>Led redesign of host onboarding experience, resulting in 25% increase in new host signups within first quarter</li>
-                            <li>Created reusable design system components reducing design-to-development handoff time by 35%</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Two Column Section -->
-            <div class="two-column-section">
-                <!-- Left Column - Education -->
-                <div class="left-column">
-                    <section class="section">
-                        <h2 class="section-title">EDUCATION</h2>
-                        <div class="section-line"></div>
-                        <div class="education-list">
-                            <div class="education-item item-interactive" data-section="education-cmu">
-                                <h3 class="education-degree">M.S. Entertainment Technology</h3>
-                                <span class="education-school">Carnegie Mellon University</span>
-                                <span class="education-year">2020 — 2022</span>
-                            </div>
-                            <div class="education-item item-interactive" data-section="education-gatech">
-                                <h3 class="education-degree">B.A. Mechanical Engineering</h3>
-                                <span class="education-school">Georgia Institute of Technology</span>
-                                <span class="education-year">2016 — 2019</span>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Right Column - Skills -->
-                <div class="right-column">
-                    <section class="section section-interactive" data-section="skills">
-                        <h2 class="section-title">SKILLS</h2>
-                        <div class="section-line"></div>
-                        <div class="skills-list">
-                            <div class="skill-row">
-                                <span class="skill-label">Design:</span>
-                                <span class="skill-value">Figma, Sketch, Adobe XD, Photoshop, Illustrator, After Effects</span>
-                            </div>
-                            <div class="skill-row">
-                                <span class="skill-label">Technical:</span>
-                                <span class="skill-value">HTML/CSS, JavaScript, React, Design Systems, Accessibility (WCAG)</span>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // Fetch weather for Vancouver
+        async function fetchWeather() {
+            try {
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=49.2827&longitude=-123.1207&current=temperature_2m,weather_code');
+                const data = await response.json();
+                const temp = Math.round(data.current.temperature_2m);
+                const weatherCode = data.current.weather_code;
+                
+                const weatherEmoji = {
+                    0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️',
+                    45: '🌫️', 48: '🌫️',
+                    51: '🌧️', 53: '🌧️', 55: '🌧️',
+                    61: '🌧️', 63: '🌧️', 65: '🌧️',
+                    71: '🌨️', 73: '🌨️', 75: '🌨️',
+                    77: '🌨️', 80: '🌧️', 81: '🌧️', 82: '🌧️',
+                    85: '🌨️', 86: '🌨️',
+                    95: '⛈️', 96: '⛈️', 99: '⛈️'
+                };
+                
+                const emoji = weatherEmoji[weatherCode] || '🌡️';
+                document.getElementById('weather').textContent = `${emoji} ${temp}°C`;
+            } catch (error) {
+                document.getElementById('weather').textContent = '🌡️';
+            }
+        }
+        fetchWeather();
+
+        // Page navigation
+        const tabs = document.querySelectorAll('.tab');
+        const papers = document.querySelectorAll('.resume-paper');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetPage = tab.dataset.page;
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Animate papers
+                papers.forEach(paper => {
+                    const paperPage = paper.dataset.page;
+                    
+                    // Remove all position classes
+                    paper.classList.remove('paper-front', 'paper-back-1', 'paper-back-2', 'active');
+                    
+                    if (paperPage === targetPage) {
+                        paper.classList.add('paper-front', 'active');
+                    } else if (paperPage === 'resume' && targetPage === 'about') {
+                        paper.classList.add('paper-back-1');
+                    } else if (paperPage === 'resume' && targetPage === 'microsoft') {
+                        paper.classList.add('paper-back-2');
+                    } else if (paperPage === 'about' && targetPage === 'resume') {
+                        paper.classList.add('paper-back-1');
+                    } else if (paperPage === 'about' && targetPage === 'microsoft') {
+                        paper.classList.add('paper-back-1');
+                    } else if (paperPage === 'microsoft' && targetPage === 'resume') {
+                        paper.classList.add('paper-back-2');
+                    } else if (paperPage === 'microsoft' && targetPage === 'about') {
+                        paper.classList.add('paper-back-2');
+                    }
+                });
+            });
+        });
+
         // Interactive section click handling
         document.querySelectorAll('.section-interactive, .item-interactive').forEach(item => {
             item.addEventListener('click', function(e) {
-                // Remove selected state from all items
                 document.querySelectorAll('.section-interactive, .item-interactive').forEach(el => {
                     el.classList.remove('selected');
                 });
-                // Add selected state to clicked item
                 this.classList.add('selected');
-                
-                // Log which section was clicked (for demo purposes)
-                console.log('Selected:', this.dataset.section);
             });
         });
 
