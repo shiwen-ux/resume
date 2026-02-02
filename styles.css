@@ -379,7 +379,10 @@ button:focus-visible {
 }
 
 .search-bar__icon {
-    font-size: 12px;
+    width: 14px;
+    height: 14px;
+    color: var(--color-text-muted);
+    flex-shrink: 0;
 }
 
 .search-bar__text {
@@ -480,8 +483,10 @@ button:focus-visible {
 }
 
 .theme-dropdown__arrow {
-    font-size: 10px;
+    width: 12px;
+    height: 12px;
     opacity: 0.7;
+    flex-shrink: 0;
 }
 
 /* Dropdown Menu - Theme aware */
@@ -558,7 +563,7 @@ button:focus-visible {
 }
 
 .theme-dropdown__item-label {
-    /* Inherits color from parent */
+    font-size: inherit;
 }
 
 /* ==========================================================================
@@ -672,6 +677,26 @@ button:focus-visible {
     height: 3px;
 }
 
+/* Color Preview (inside dropdown) */
+.ribbon-dropdown__color-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    pointer-events: none;
+}
+
+.ribbon-dropdown__letter {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+}
+
+.ribbon-dropdown__color-bar {
+    width: 16px;
+    height: 3px;
+    background: #1A1A1A;
+}
+
 /* Ribbon Dropdown */
 .ribbon-dropdown {
     display: flex;
@@ -707,9 +732,11 @@ button:focus-visible {
 }
 
 .ribbon-dropdown__arrow {
-    font-size: 10px;
+    width: 14px;
+    height: 14px;
     color: var(--color-text-muted);
     margin-left: var(--spacing-xs);
+    flex-shrink: 0;
 }
 
 /* Ribbon Dropdown Menus */
@@ -780,6 +807,17 @@ button:focus-visible {
     cursor: pointer;
     transition: all var(--transition-fast);
 }
+
+.color-swatch--black { background: #1A1A1A; }
+.color-swatch--dark-gray { background: #374151; }
+.color-swatch--blue { background: #0078D4; }
+.color-swatch--green { background: #107C10; }
+.color-swatch--orange { background: #D83B01; }
+.color-swatch--purple { background: #881798; }
+.color-swatch--red { background: #C50F1F; }
+.color-swatch--teal { background: #008272; }
+
+.ribbon-btn__color-bar--black { background: #1A1A1A; }
 
 .color-swatch:hover {
     border-color: var(--color-text-primary);
@@ -1011,8 +1049,8 @@ button:focus-visible {
 .resume-section--interactive.selected,
 .experience-item--interactive.selected,
 .education-item--interactive.selected {
-    background-color: #E8F4FD;
-    border-left-color: var(--color-accent);
+    background-color: color-mix(in srgb, currentColor 5%, transparent);
+    border-left-color: currentColor;
 }
 
 /* Experience List */
@@ -1186,6 +1224,10 @@ button:focus-visible {
     margin-left: auto;
     font-style: italic;
     opacity: 0.8;
+}
+
+.status-bar__disclaimer .emoji {
+    font-style: normal;
 }
 
 /* Zoom Controls */

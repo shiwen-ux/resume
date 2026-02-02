@@ -27,12 +27,14 @@
                 </div>
                 <span class="doc-name">Resume_Shiwen_Jiang</span>
                 <div class="doc-actions">
-                    <button class="icon-btn" id="refresh-btn" aria-label="Refresh">↻</button>
+                    <button class="icon-btn" id="refresh-btn" aria-label="Refresh">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                    </button>
                 </div>
             </div>
             
             <div class="search-bar">
-                <span class="search-bar__icon">🔍</span>
+                <svg class="search-bar__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 <span class="search-bar__text">Search for projects (WIP)</span>
             </div>
             
@@ -41,7 +43,7 @@
                     <button class="theme-dropdown__trigger" id="theme-trigger">
                         <span class="theme-dropdown__icon" id="theme-icon">🌙</span>
                         <span class="theme-dropdown__label" id="theme-label">Dark</span>
-                        <span class="theme-dropdown__arrow">▾</span>
+                        <svg class="theme-dropdown__arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
                     <div class="theme-dropdown__menu" id="theme-menu">
                         <button class="theme-dropdown__item" data-theme="light">
@@ -59,7 +61,7 @@
                     </div>
                 </div>
                 <button class="share-btn" id="download-btn">
-                    <span>↓</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     <span>Download</span>
                 </button>
                 <img class="user-avatar" src="profile.jpg" alt="Shiwen Jiang">
@@ -72,7 +74,7 @@
             <div class="ribbon__group">
                 <div class="ribbon-dropdown ribbon-dropdown--font" id="font-dropdown">
                     <span class="ribbon-dropdown__text" id="current-font">Source Serif 4</span>
-                    <span class="ribbon-dropdown__arrow">▾</span>
+                    <svg class="ribbon-dropdown__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     <div class="dropdown-menu dropdown-menu--font" id="font-menu">
                         <button class="dropdown-item" data-font="'Source Serif 4', serif">Source Serif 4</button>
                         <button class="dropdown-item" data-font="'Inter', sans-serif">Inter</button>
@@ -82,7 +84,7 @@
                 </div>
                 <div class="ribbon-dropdown ribbon-dropdown--size" id="size-dropdown">
                     <span class="ribbon-dropdown__text" id="current-size">11</span>
-                    <span class="ribbon-dropdown__arrow">▾</span>
+                    <svg class="ribbon-dropdown__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     <div class="dropdown-menu dropdown-menu--size" id="size-menu">
                         <button class="dropdown-item" data-size="9">9</button>
                         <button class="dropdown-item" data-size="10">10</button>
@@ -102,20 +104,20 @@
             <!-- Color Group -->
             <div class="ribbon__group">
                 <div class="ribbon-dropdown ribbon-dropdown--color" id="color-dropdown">
-                    <div class="ribbon-btn ribbon-btn--color">
-                        <span class="ribbon-btn__letter">A</span>
-                        <span class="ribbon-btn__color-bar" id="current-color-bar" style="background: #1A1A1A;"></span>
-                    </div>
-                    <span class="ribbon-dropdown__arrow">▾</span>
+                    <span class="ribbon-dropdown__color-preview">
+                        <span class="ribbon-dropdown__letter">A</span>
+                        <span class="ribbon-dropdown__color-bar" id="current-color-bar"></span>
+                    </span>
+                    <svg class="ribbon-dropdown__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     <div class="dropdown-menu dropdown-menu--color" id="color-menu">
-                        <button class="color-swatch" data-color="#1A1A1A" style="background: #1A1A1A;" title="Black"></button>
-                        <button class="color-swatch" data-color="#374151" style="background: #374151;" title="Dark Gray"></button>
-                        <button class="color-swatch" data-color="#0078D4" style="background: #0078D4;" title="Blue"></button>
-                        <button class="color-swatch" data-color="#107C10" style="background: #107C10;" title="Green"></button>
-                        <button class="color-swatch" data-color="#D83B01" style="background: #D83B01;" title="Orange"></button>
-                        <button class="color-swatch" data-color="#881798" style="background: #881798;" title="Purple"></button>
-                        <button class="color-swatch" data-color="#C50F1F" style="background: #C50F1F;" title="Red"></button>
-                        <button class="color-swatch" data-color="#008272" style="background: #008272;" title="Teal"></button>
+                        <button class="color-swatch color-swatch--black" data-color="#1A1A1A" title="Black"></button>
+                        <button class="color-swatch color-swatch--dark-gray" data-color="#374151" title="Dark Gray"></button>
+                        <button class="color-swatch color-swatch--blue" data-color="#0078D4" title="Blue"></button>
+                        <button class="color-swatch color-swatch--green" data-color="#107C10" title="Green"></button>
+                        <button class="color-swatch color-swatch--orange" data-color="#D83B01" title="Orange"></button>
+                        <button class="color-swatch color-swatch--purple" data-color="#881798" title="Purple"></button>
+                        <button class="color-swatch color-swatch--red" data-color="#C50F1F" title="Red"></button>
+                        <button class="color-swatch color-swatch--teal" data-color="#008272" title="Teal"></button>
                     </div>
                 </div>
             </div>
@@ -145,7 +147,7 @@
                         
                         <div class="resume-sidebar__section">
                             <span class="resume-sidebar__label">linkedin</span>
-                            <p class="resume-sidebar__text"><a href="https://linkedin.com/in/shiwenjiang" target="_blank">linkedin.com/<br>in/shiwenjiang</a></p>
+                            <p class="resume-sidebar__text"><a href="https://linkedin.com/in/shiwenjiang" target="_blank" rel="noopener">linkedin.com/<br>in/shiwenjiang</a></p>
                         </div>
                     </aside>
                     
@@ -231,7 +233,7 @@ brand identity..</p>
                 <button class="zoom-btn" id="zoom-in" aria-label="Zoom in">+</button>
                 <span class="zoom-value" id="zoom-value">100%</span>
                 <button class="zoom-btn" id="zoom-fit" aria-label="Fit to page">⤢ Fit</button>
-                <span class="status-bar__disclaimer">👨‍💻 Vibecoded by Shiwen</span>
+                <span class="status-bar__disclaimer"><span class="emoji">👨‍💻</span> Vibecoded by Shiwen</span>
             </div>
         </footer>
     </div>
