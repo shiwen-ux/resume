@@ -20,7 +20,7 @@
     const themeConfig = {
         light: { icon: '☀️', label: 'Light' },
         dark: { icon: '🌙', label: 'Dark' },
-        retro: { icon: '🖥️', label: 'Retro' }
+        retro: { icon: '📠', label: 'Retro' }
     };
     
     function setTheme(theme) {
@@ -118,7 +118,12 @@
     function updateZoom(value) {
         currentZoom = Math.max(50, Math.min(200, value));
         if (zoomValue) zoomValue.textContent = `${currentZoom}%`;
-        if (zoomSlider) zoomSlider.value = currentZoom;
+        if (zoomSlider) {
+            zoomSlider.value = currentZoom;
+            // Update slider fill color
+            const percent = ((currentZoom - 50) / (200 - 50)) * 100;
+            zoomSlider.style.background = `linear-gradient(to right, var(--color-accent) ${percent}%, var(--color-bg-hover) ${percent}%)`;
+        }
         
         // Apply zoom to paper
         const paper = document.querySelector('.paper');
