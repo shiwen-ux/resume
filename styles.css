@@ -64,6 +64,215 @@
     --transition-normal: 0.2s ease;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+    /* Colors - Light */
+    --color-bg-primary: #F5F5F5;
+    --color-bg-secondary: #FFFFFF;
+    --color-bg-tertiary: #E8E8E8;
+    --color-bg-input: #FFFFFF;
+    --color-bg-hover: #E0E0E0;
+    
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #333333;
+    --color-text-muted: #666666;
+    --color-text-disabled: #999999;
+    
+    --color-border: #D0D0D0;
+    --color-divider: #E0E0E0;
+    
+    --color-accent: #0078D4;
+    --color-accent-hover: #0F6CBD;
+    
+    /* Paper Colors */
+    --color-paper: #FFFFFF;
+    --color-paper-text: #1A1A1A;
+    --color-paper-secondary: #666666;
+    --color-paper-body: #333333;
+}
+
+/* Retro Theme - Word 2003 Style */
+[data-theme="retro"] {
+    /* Title Bar - XP Blue */
+    --color-bg-primary: #0A246A;
+    
+    /* Toolbars - Cream/Beige like Word 2003 */
+    --color-bg-secondary: #ECE9D8;
+    --color-bg-tertiary: #F5F4F0;
+    --color-bg-input: #FFFFFF;
+    --color-bg-hover: #C1D2EE;
+    
+    /* Text Colors */
+    --color-text-primary: #000000;
+    --color-text-secondary: #000000;
+    --color-text-muted: #4A4A4A;
+    --color-text-disabled: #808080;
+    
+    /* Borders - 3D effect colors */
+    --color-border: #ACA899;
+    --color-divider: #ACA899;
+    
+    /* Accent - Classic selection blue */
+    --color-accent: #316AC5;
+    --color-accent-hover: #4A7FCF;
+    
+    /* Paper/Document area */
+    --color-paper: #FFFFFF;
+    --color-paper-text: #000000;
+    --color-paper-secondary: #333333;
+    --color-paper-body: #000000;
+    
+    /* Typography - Tahoma was the XP/Office 2003 font */
+    --font-sans: 'Tahoma', 'Segoe UI', sans-serif;
+    
+    /* Sharp corners for classic look */
+    --radius-sm: 0px;
+    --radius-md: 0px;
+    --radius-lg: 0px;
+}
+
+/* Word 2003 specific overrides */
+
+/* Title bar - beige/cream like toolbar */
+[data-theme="retro"] .title-bar {
+    background: linear-gradient(180deg, #F6F4EF 0%, #E8E6DF 50%, #D8D5CD 100%);
+}
+
+[data-theme="retro"] .title-bar__left,
+[data-theme="retro"] .title-bar__right {
+    color: #000000;
+}
+
+[data-theme="retro"] .doc-name {
+    color: #000000;
+    font-weight: bold;
+}
+
+[data-theme="retro"] .word-logo {
+    background: linear-gradient(180deg, #5B9BD5 0%, #2E75B6 100%);
+    border: none;
+}
+
+[data-theme="retro"] .word-logo span {
+    color: #FFFFFF;
+}
+
+[data-theme="retro"] .search-bar {
+    background: #FFFFFF;
+    border: 1px solid #7F9DB9;
+    color: #808080;
+}
+
+/* Tab/Menu bar - cream background */
+[data-theme="retro"] .tab-bar {
+    background: #ECE9D8;
+    border-bottom: 1px solid #ACA899;
+}
+
+[data-theme="retro"] .tab {
+    color: #000000;
+    border-bottom: none;
+}
+
+[data-theme="retro"] .tab:hover {
+    background: #C1D2EE;
+}
+
+[data-theme="retro"] .tab--active {
+    background: transparent;
+    border-bottom: none;
+}
+
+/* Ribbon/Toolbar - light cream with subtle gradient */
+[data-theme="retro"] .ribbon {
+    background: linear-gradient(180deg, #F6F6F6 0%, #E3E3E0 50%, #D8D8D4 100%);
+    border-bottom: 1px solid #ACA899;
+}
+
+[data-theme="retro"] .ribbon-btn {
+    border: 1px solid transparent;
+    color: #000000;
+}
+
+[data-theme="retro"] .ribbon-btn:hover {
+    background: #C1D2EE;
+    border: 1px solid #316AC5;
+}
+
+[data-theme="retro"] .ribbon-dropdown {
+    background: #FFFFFF;
+    border: 1px solid #7F9DB9;
+}
+
+[data-theme="retro"] .ribbon-dropdown__text {
+    color: #000000;
+}
+
+[data-theme="retro"] .ribbon-dropdown__arrow {
+    color: #000000;
+}
+
+[data-theme="retro"] .ribbon__divider {
+    background: #ACA899;
+}
+
+/* Document area - medium gray like Word 2003 */
+[data-theme="retro"] .document-area {
+    background: #808080;
+}
+
+[data-theme="retro"] .paper {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Download button - classic 3D style */
+[data-theme="retro"] .share-btn {
+    background: linear-gradient(180deg, #F6F6F6 0%, #E3E3E0 100%);
+    border: 1px solid #ACA899;
+    border-top-color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    color: #000000;
+}
+
+[data-theme="retro"] .share-btn:hover {
+    background: #C1D2EE;
+    border-color: #316AC5;
+}
+
+/* Status bar - cream with 3D inset */
+[data-theme="retro"] .status-bar {
+    background: #ECE9D8;
+    border-top: 1px solid #FFFFFF;
+    box-shadow: inset 0 1px 0 #D4D0C8;
+}
+
+[data-theme="retro"] .status-bar__section {
+    color: #000000;
+}
+
+/* Theme dropdown in title bar */
+[data-theme="retro"] .theme-dropdown__trigger {
+    color: #000000;
+}
+
+[data-theme="retro"] .theme-dropdown__trigger:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* User avatar */
+[data-theme="retro"] .user-avatar {
+    border-color: #ACA899;
+}
+
+/* Icon button */
+[data-theme="retro"] .icon-btn {
+    color: #000000;
+}
+
+[data-theme="retro"] .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 /* ==========================================================================
    2. Reset & Base Styles
    ========================================================================== */
@@ -169,14 +378,14 @@ button:focus-visible {
     justify-content: center;
     width: 28px;
     height: 28px;
-    background-color: #185ABD;
+    background-color: var(--color-accent);
     border-radius: var(--radius-md);
 }
 
 .word-logo span {
     font-size: 16px;
     font-weight: 700;
-    color: var(--color-text-primary);
+    color: #FFFFFF;
 }
 
 /* Document Name */
@@ -271,7 +480,7 @@ button:focus-visible {
     gap: var(--spacing-xs);
     padding: var(--spacing-sm) var(--spacing-lg);
     background-color: var(--color-accent-hover);
-    color: var(--color-text-primary);
+    color: #FFFFFF;
     font-weight: 500;
     border-radius: var(--radius-md);
     transition: background-color var(--transition-fast);
@@ -293,6 +502,98 @@ button:focus-visible {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--color-bg-hover);
+}
+
+/* Theme Dropdown */
+.theme-dropdown {
+    position: relative;
+}
+
+.theme-dropdown__trigger {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.theme-dropdown__trigger:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.theme-dropdown__icon {
+    font-size: 16px;
+}
+
+.theme-dropdown__label {
+    font-size: 12px;
+}
+
+.theme-dropdown__arrow {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+/* Dropdown Menu - Simple rules: white bg + black text always */
+.theme-dropdown__menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: var(--spacing-xs);
+    min-width: 120px;
+    background: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: all var(--transition-fast);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-dropdown__menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.theme-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    color: #1A1A1A;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    pointer-events: auto;
+}
+
+.theme-dropdown__item:hover {
+    background: #F0F0F0;
+}
+
+.theme-dropdown__item-icon {
+    font-size: 14px;
+}
+
+.theme-dropdown__item-label {
+    color: #1A1A1A;
 }
 
 /* ==========================================================================
@@ -915,34 +1216,44 @@ button:focus-visible {
     color: var(--color-text-secondary);
 }
 
-.zoom-slider {
-    position: relative;
+.zoom-slider-input {
+    -webkit-appearance: none;
+    appearance: none;
     width: 80px;
     height: 4px;
-    background-color: var(--color-bg-hover);
+    background: var(--color-bg-hover);
     border-radius: var(--radius-full);
+    outline: none;
+    cursor: pointer;
 }
 
-.zoom-slider__track {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-color: var(--color-accent);
-    border-radius: var(--radius-full);
-}
-
-.zoom-slider__thumb {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.zoom-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
     width: 12px;
     height: 12px;
-    background-color: var(--color-accent);
+    background: var(--color-accent);
     border-radius: 50%;
-    cursor: pointer;
+    cursor: grab;
+}
+
+.zoom-slider-input::-webkit-slider-thumb:active {
+    cursor: grabbing;
+}
+
+.zoom-slider-input::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    border: none;
+    cursor: grab;
+}
+
+.zoom-slider-input::-moz-range-track {
+    background: var(--color-bg-hover);
+    height: 4px;
+    border-radius: var(--radius-full);
 }
 
 .zoom-value {
