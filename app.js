@@ -8,6 +8,58 @@
     'use strict';
 
     // ==========================================================================
+    // Theme Dropdown
+    // ==========================================================================
+    
+    const themeTrigger = document.getElementById('theme-trigger');
+    const themeMenu = document.getElementById('theme-menu');
+    const themeIcon = document.getElementById('theme-icon');
+    const themeLabel = document.getElementById('theme-label');
+    const htmlEl = document.documentElement;
+    
+    const themeConfig = {
+        light: { icon: '☀️', label: 'Light' },
+        dark: { icon: '🌙', label: 'Dark' },
+        retro: { icon: '🖥️', label: 'Retro' }
+    };
+    
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            htmlEl.removeAttribute('data-theme');
+        } else {
+            htmlEl.setAttribute('data-theme', theme);
+        }
+        themeIcon.textContent = themeConfig[theme].icon;
+        themeLabel.textContent = themeConfig[theme].label;
+        localStorage.setItem('theme', theme);
+    }
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    
+    if (themeTrigger) {
+        themeTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            themeMenu.classList.toggle('open');
+        });
+        
+        themeMenu.querySelectorAll('.theme-dropdown__item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const theme = item.dataset.theme;
+                setTheme(theme);
+                themeMenu.classList.remove('open');
+            });
+        });
+    }
+    
+    // Close theme dropdown when clicking outside
+    document.addEventListener('click', () => {
+        themeMenu?.classList.remove('open');
+    });
+
+    // ==========================================================================
     // Download PDF
     // ==========================================================================
     
@@ -56,19 +108,17 @@
     // Zoom Controls
     // ==========================================================================
     
-    const zoomValue = document.querySelector('.zoom-value');
-    const zoomSlider = document.querySelector('.zoom-slider');
-    const zoomThumb = document.querySelector('.zoom-slider__thumb');
-    const zoomTrack = document.querySelector('.zoom-slider__track');
+    const zoomValue = document.getElementById('zoom-value');
+    const zoomSlider = document.getElementById('zoom-slider');
+    const zoomIn = document.getElementById('zoom-in');
+    const zoomOut = document.getElementById('zoom-out');
+    const zoomFit = document.getElementById('zoom-fit');
     let currentZoom = 100;
     
     function updateZoom(value) {
         currentZoom = Math.max(50, Math.min(200, value));
-        zoomValue.textContent = `${currentZoom}%`;
-        
-        const percentage = (currentZoom - 50) / 150 * 100;
-        zoomThumb.style.left = `${percentage}%`;
-        zoomTrack.style.width = `${percentage}%`;
+        if (zoomValue) zoomValue.textContent = `${currentZoom}%`;
+        if (zoomSlider) zoomSlider.value = currentZoom;
         
         // Apply zoom to paper
         const paper = document.querySelector('.paper');
@@ -78,18 +128,26 @@
         }
     }
     
-    document.querySelectorAll('.zoom-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const text = btn.textContent.trim();
-            if (text === '−') {
-                updateZoom(currentZoom - 10);
-            } else if (text === '+') {
-                updateZoom(currentZoom + 10);
-            } else if (text.includes('Fit')) {
-                updateZoom(100);
-            }
+    // Initialize zoom display
+    updateZoom(100);
+    
+    // Zoom buttons
+    if (zoomOut) {
+        zoomOut.addEventListener('click', () => updateZoom(currentZoom - 10));
+    }
+    if (zoomIn) {
+        zoomIn.addEventListener('click', () => updateZoom(currentZoom + 10));
+    }
+    if (zoomFit) {
+        zoomFit.addEventListener('click', () => updateZoom(100));
+    }
+    
+    // Slider input
+    if (zoomSlider) {
+        zoomSlider.addEventListener('input', (e) => {
+            updateZoom(parseInt(e.target.value));
         });
-    });
+    }
 
     // ==========================================================================
     // Search Bar Focus

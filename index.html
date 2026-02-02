@@ -37,15 +37,27 @@
             </div>
             
             <div class="title-bar__right">
-                <button class="toolbar-btn">
-                    <span class="toolbar-btn__icon">💬</span>
-                    <span class="toolbar-btn__text">Comments</span>
-                </button>
-                <button class="toolbar-btn toolbar-btn--dropdown">
-                    <span class="toolbar-btn__icon">✏️</span>
-                    <span class="toolbar-btn__text">Editing</span>
-                    <span class="toolbar-btn__arrow">▾</span>
-                </button>
+                <div class="theme-dropdown" id="theme-dropdown">
+                    <button class="theme-dropdown__trigger" id="theme-trigger">
+                        <span class="theme-dropdown__icon" id="theme-icon">🌙</span>
+                        <span class="theme-dropdown__label" id="theme-label">Dark</span>
+                        <span class="theme-dropdown__arrow">▾</span>
+                    </button>
+                    <div class="theme-dropdown__menu" id="theme-menu">
+                        <button class="theme-dropdown__item" data-theme="light">
+                            <span class="theme-dropdown__item-icon">☀️</span>
+                            <span class="theme-dropdown__item-label">Light</span>
+                        </button>
+                        <button class="theme-dropdown__item" data-theme="dark">
+                            <span class="theme-dropdown__item-icon">🌙</span>
+                            <span class="theme-dropdown__item-label">Dark</span>
+                        </button>
+                        <button class="theme-dropdown__item" data-theme="retro">
+                            <span class="theme-dropdown__item-icon">🖥️</span>
+                            <span class="theme-dropdown__item-label">Retro</span>
+                        </button>
+                    </div>
+                </div>
                 <button class="share-btn" id="download-btn">
                     <span>↓</span>
                     <span>Download</span>
@@ -218,14 +230,11 @@
                 <span>English (U.S.)</span>
             </div>
             <div class="status-bar__right">
-                <button class="zoom-btn">−</button>
-                <div class="zoom-slider">
-                    <div class="zoom-slider__track"></div>
-                    <div class="zoom-slider__thumb"></div>
-                </div>
-                <button class="zoom-btn">+</button>
-                <span class="zoom-value">100%</span>
-                <button class="zoom-btn">⟲ Fit</button>
+                <button class="zoom-btn" id="zoom-out" aria-label="Zoom out">−</button>
+                <input type="range" class="zoom-slider-input" id="zoom-slider" min="50" max="200" value="100" aria-label="Zoom level">
+                <button class="zoom-btn" id="zoom-in" aria-label="Zoom in">+</button>
+                <span class="zoom-value" id="zoom-value">100%</span>
+                <button class="zoom-btn" id="zoom-fit" aria-label="Fit to page">⟲ Fit</button>
             </div>
         </footer>
     </div>
