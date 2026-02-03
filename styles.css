@@ -93,8 +93,8 @@
 
 /* Retro Theme - Word 2003 Style */
 [data-theme="retro"] {
-    /* Document area background */
-    --color-bg-primary: #808080;
+    /* Document area background - beige like Word 2003 */
+    --color-bg-primary: #9C9B91;
     
     /* Toolbars - Cream/Beige like Word 2003 */
     --color-bg-secondary: #ECE9D8;
@@ -156,12 +156,12 @@
 
 [data-theme="retro"] .search-bar {
     border: 2px inset var(--color-border-dark);
-    background: #FFFEF8;
+    background: #FFFFFF;
     border-radius: 0;
 }
 
 [data-theme="retro"] .search-bar:hover {
-    background: #FFFEF8;
+    background: #FFFFFF;
 }
 
 [data-theme="retro"] .tab-bar {
@@ -199,12 +199,12 @@
 
 [data-theme="retro"] .ribbon-dropdown {
     border: 2px inset var(--color-border-dark);
-    background: #FFFEF8;
+    background: #FFFFFF;
     border-radius: 0;
 }
 
 [data-theme="retro"] .ribbon-dropdown:hover {
-    background: #FFFEF8;
+    background: #FFFFFF;
 }
 
 [data-theme="retro"] .dropdown-menu {
