@@ -997,8 +997,9 @@ button:focus-visible {
     padding: var(--spacing-xl);
     background-color: var(--color-bg-primary);
     gap: var(--spacing-xl);
-    overflow: hidden;
+    overflow: auto;
     justify-content: center;
+    align-items: flex-start;
     transition: all var(--transition-normal);
 }
 
@@ -1036,6 +1037,15 @@ button:focus-visible {
     color: var(--color-text-secondary);
 }
 
+/* Paper Wrapper - handles zoom scaling for layout */
+.paper-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all var(--transition-normal);
+}
+
 /* Paper - US Letter size proportions (8.5 x 11 inches) */
 .paper {
     flex: 0 0 auto;
@@ -1048,13 +1058,10 @@ button:focus-visible {
     overflow-y: auto;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     transition: all var(--transition-normal);
+    transform-origin: top center;
 }
 
-/* Comment Panel */
-.comment-panel {
-    width: 280px;
-    padding-top: 40px;
-}
+/* Comment Panel - see main styles below */
 
 /* ==========================================================================
    Resume Content Styles
@@ -1602,6 +1609,7 @@ button:focus-visible {
 
 /* Comment Panel Styles */
 .comment-panel {
+    flex: 0 0 auto;
     width: 0;
     padding-top: 0;
     display: flex;
@@ -1612,12 +1620,17 @@ button:focus-visible {
     transition: all var(--transition-normal);
     overflow-y: auto;
     overflow-x: hidden;
+    align-self: flex-start;
+    position: sticky;
+    top: var(--spacing-xl);
+    max-height: calc(100vh - 200px);
 }
 
 .comment-panel.visible {
     opacity: 1;
     visibility: visible;
     width: 280px;
+    padding-top: 0;
 }
 
 /* Review Pane Header */

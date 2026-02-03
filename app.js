@@ -308,9 +308,18 @@
         
         // Apply zoom to paper
         const paper = document.querySelector('.paper');
+        const paperWrapper = document.querySelector('.paper-wrapper');
         if (paper) {
-            paper.style.transform = `scale(${currentZoom / 100})`;
-            paper.style.transformOrigin = 'top center';
+            const scale = currentZoom / 100;
+            paper.style.transform = `scale(${scale})`;
+            
+            // Update wrapper dimensions to match scaled paper size for proper layout
+            if (paperWrapper) {
+                const scaledWidth = 612 * scale;
+                const scaledHeight = 792 * scale;
+                paperWrapper.style.width = `${scaledWidth}px`;
+                paperWrapper.style.minHeight = `${scaledHeight}px`;
+            }
         }
     }
     
