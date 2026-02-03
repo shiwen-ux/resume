@@ -127,7 +127,7 @@
     /* Gradients for classic 3D look */
     --gradient-toolbar: linear-gradient(180deg, #F6F4EF 0%, #E8E6DF 50%, #D8D5CD 100%);
     --gradient-ribbon: linear-gradient(180deg, #F6F6F6 0%, #E3E3E0 50%, #D8D8D4 100%);
-    --gradient-button: linear-gradient(180deg, #F6F6F6 0%, #E3E3E0 100%);
+    --gradient-button: linear-gradient(180deg, #F5F3EB 0%, #E8E4D8 100%);
     --gradient-logo: linear-gradient(180deg, #5B9BD5 0%, #2E75B6 100%);
     
     /* Keep same font to prevent layout shift */
@@ -155,7 +155,13 @@
 }
 
 [data-theme="retro"] .search-bar {
-    border-color: var(--color-border);
+    border: 2px inset var(--color-border-dark);
+    background: #FFFEF8;
+    border-radius: 0;
+}
+
+[data-theme="retro"] .search-bar:hover {
+    background: #FFFEF8;
 }
 
 [data-theme="retro"] .tab-bar {
@@ -174,14 +180,54 @@
 
 [data-theme="retro"] .ribbon-btn {
     border: 1px solid transparent;
+    background: var(--gradient-button);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    border-right-color: var(--color-border-dark);
+    border-bottom-color: var(--color-border-dark);
 }
 
 [data-theme="retro"] .ribbon-btn:hover {
     border-color: var(--color-accent);
+    background: var(--color-bg-hover);
+}
+
+[data-theme="retro"] .ribbon-btn:active {
+    border-style: inset;
+    background: var(--color-bg-hover);
 }
 
 [data-theme="retro"] .ribbon-dropdown {
-    border-color: var(--color-border);
+    border: 2px inset var(--color-border-dark);
+    background: #FFFEF8;
+    border-radius: 0;
+}
+
+[data-theme="retro"] .ribbon-dropdown:hover {
+    background: #FFFEF8;
+}
+
+[data-theme="retro"] .dropdown-menu {
+    border: 1px solid var(--color-border);
+    border-radius: 0;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="retro"] .dropdown-item {
+    border-radius: 0;
+}
+
+[data-theme="retro"] .dropdown-item:hover {
+    background: var(--color-bg-hover);
+}
+
+[data-theme="retro"] .color-swatch {
+    border-radius: 0;
+}
+
+[data-theme="retro"] .ribbon__divider {
+    background-color: var(--color-border-dark);
+    box-shadow: 1px 0 0 var(--color-border-light);
 }
 
 [data-theme="retro"] .paper {
@@ -212,6 +258,39 @@
 
 [data-theme="retro"] .user-avatar {
     border-color: var(--color-divider);
+    border-radius: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    border-right-color: var(--color-border-dark);
+    border-bottom-color: var(--color-border-dark);
+    filter: sepia(40%) contrast(1.1) saturate(0.9);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    width: 32px;
+    height: 32px;
+    background-size: 8px 8px;
+    overflow: hidden;
+}
+
+/* Pixelate avatar using pseudo-element trick */
+[data-theme="retro"] .user-avatar {
+    position: relative;
+}
+
+[data-theme="retro"] .comment-card__avatar {
+    border-radius: 0;
+    filter: sepia(40%) contrast(1.1) saturate(0.9);
+    border: 1px solid #999966;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    width: 24px;
+    height: 24px;
 }
 
 /* ==========================================================================
@@ -566,6 +645,82 @@ button:focus-visible {
     font-size: inherit;
 }
 
+/* Theme Hint Tooltip */
+.theme-hint {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 200px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-accent);
+    color: #FFFFFF;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+    z-index: 1001;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.theme-hint::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 16px;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    transform: rotate(45deg);
+}
+
+.theme-hint.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.theme-hint__icon {
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.theme-hint__text {
+    flex: 1;
+}
+
+.theme-hint__text strong {
+    color: #FFFFFF;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.theme-hint__text strong:hover {
+    text-decoration: none;
+}
+
+.theme-hint__close {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.theme-hint__close:hover {
+    color: #FFFFFF;
+}
+
 /* ==========================================================================
    5. Tab Bar
    ========================================================================== */
@@ -825,7 +980,7 @@ button:focus-visible {
 }
 
 .ribbon-dropdown--size {
-    width: 50px;
+    width: 56px;
 }
 
 .ribbon-dropdown--color {
@@ -843,6 +998,8 @@ button:focus-visible {
     background-color: var(--color-bg-primary);
     gap: var(--spacing-xl);
     overflow: hidden;
+    justify-content: center;
+    transition: all var(--transition-normal);
 }
 
 /* Side Panel */
@@ -851,6 +1008,15 @@ button:focus-visible {
     flex-direction: column;
     width: 40px;
     padding-top: var(--spacing-sm);
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.comments-visible .side-panel {
+    opacity: 1;
+    width: 40px;
 }
 
 .side-panel__btn {
@@ -870,14 +1036,18 @@ button:focus-visible {
     color: var(--color-text-secondary);
 }
 
-/* Paper */
+/* Paper - US Letter size proportions (8.5 x 11 inches) */
 .paper {
-    flex: 1;
-    max-width: 680px;
+    flex: 0 0 auto;
+    width: 612px;  /* 8.5 inches at 72dpi */
+    height: 792px; /* 11 inches at 72dpi */
+    min-height: 792px;
+    aspect-ratio: 8.5 / 11;
     background-color: var(--color-paper);
-    padding: 60px 72px;
+    padding: 48px 56px;
     overflow-y: auto;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    transition: all var(--transition-normal);
 }
 
 /* Comment Panel */
@@ -1049,8 +1219,8 @@ button:focus-visible {
 .resume-section--interactive.selected,
 .experience-item--interactive.selected,
 .education-item--interactive.selected {
-    background-color: color-mix(in srgb, currentColor 5%, transparent);
-    border-left-color: currentColor;
+    background-color: rgba(0, 120, 212, 0.08);
+    border-left-color: #0078D4;
 }
 
 /* Experience List */
@@ -1293,8 +1463,411 @@ button:focus-visible {
     text-align: right;
 }
 
+/* Retro theme zoom slider - Windows XP style */
+[data-theme="retro"] .zoom-slider-input {
+    height: 6px;
+    background: var(--color-border-dark);
+    border: 1px inset var(--color-border-dark);
+    border-radius: 0;
+}
+
+[data-theme="retro"] .zoom-slider-input::-webkit-slider-thumb {
+    width: 10px;
+    height: 18px;
+    background: var(--gradient-button);
+    border: 1px solid var(--color-border-dark);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    border-radius: 0;
+}
+
+[data-theme="retro"] .zoom-slider-input::-moz-range-thumb {
+    width: 10px;
+    height: 18px;
+    background: var(--gradient-button);
+    border: 1px solid var(--color-border-dark);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    border-radius: 0;
+}
+
+[data-theme="retro"] .zoom-slider-input::-moz-range-track {
+    background: var(--color-border-dark);
+    border: 1px inset var(--color-border-dark);
+    border-radius: 0;
+}
+
+[data-theme="retro"] .zoom-slider-input::-moz-range-progress {
+    background: var(--color-accent);
+    border-radius: 0;
+}
+
+[data-theme="retro"] .zoom-btn {
+    background: var(--gradient-button);
+    border: 1px solid var(--color-border-dark);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    padding: 2px 6px;
+}
+
+[data-theme="retro"] .zoom-btn:hover {
+    border-color: var(--color-accent);
+}
+
 /* ==========================================================================
-   9. Utility Classes
+   9. Comment System
+   ========================================================================== */
+
+/* Comment Toggle Button */
+.ribbon-btn--comments {
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-sm);
+    font-size: 12px;
+}
+
+.ribbon-btn--comments.active {
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+}
+
+.ribbon-btn--comments .comment-icon {
+    font-size: 14px;
+}
+
+/* Retro theme comments button - Word 2003 3D button style */
+[data-theme="retro"] .ribbon-btn--comments {
+    background: var(--gradient-button);
+    border: 1px solid var(--color-divider);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+}
+
+[data-theme="retro"] .ribbon-btn--comments:hover {
+    border-color: var(--color-accent);
+}
+
+[data-theme="retro"] .ribbon-btn--comments.active {
+    background: var(--color-bg-hover);
+    border: 2px inset var(--color-border-dark);
+    color: var(--color-text-primary);
+}
+
+/* Comment Markers on Resume Items */
+.comment-marker {
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #FFF9C4;
+    border: 1px solid #FBC02D;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #F57F17;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    pointer-events: none;
+}
+
+.comments-visible .comment-marker {
+    opacity: 1;
+}
+
+/* Comment connector line */
+.comment-connector {
+    position: absolute;
+    right: -32px;
+    top: 50%;
+    width: 24px;
+    height: 0;
+    border-top: 1px dashed #FBC02D;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.comments-visible .comment-connector {
+    opacity: 1;
+}
+
+/* Interactive items need relative positioning for markers */
+.experience-item--interactive,
+.education-item--interactive {
+    position: relative;
+}
+
+/* Comment Panel Styles */
+.comment-panel {
+    width: 0;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.comment-panel.visible {
+    opacity: 1;
+    visibility: visible;
+    width: 280px;
+}
+
+/* Review Pane Header */
+.review-pane-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-divider);
+    margin-bottom: var(--spacing-sm);
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg-primary);
+    z-index: 10;
+    padding-top: var(--spacing-sm);
+    margin-top: calc(-1 * var(--spacing-sm));
+}
+
+.review-pane-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.review-pane-title .icon {
+    font-size: 14px;
+}
+
+.review-pane-close {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.review-pane-close:hover {
+    background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
+}
+
+/* Retro theme review pane - Word 2003 style */
+[data-theme="retro"] .review-pane-header {
+    background: var(--gradient-toolbar);
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-divider);
+    border-bottom: 1px solid var(--color-border-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+[data-theme="retro"] .review-pane-title {
+    font-weight: 700;
+    text-transform: none;
+}
+
+[data-theme="retro"] .review-pane-close {
+    background: var(--gradient-button);
+    border: 1px solid var(--color-divider);
+    border-top-color: var(--color-border-light);
+    border-left-color: var(--color-border-light);
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+[data-theme="retro"] .review-pane-close:hover {
+    border-color: var(--color-accent);
+    background: var(--color-bg-hover);
+}
+
+/* Comment Card */
+.comment-card {
+    background-color: #F5F5F5;
+    border: 1px solid #E0E0E0;
+    border-left: 3px solid #E0E0E0;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    opacity: 0.7;
+}
+
+.comment-card:hover {
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-card.active {
+    opacity: 1;
+    border-left-color: #0078D4;
+    background-color: #E8F4FF;
+    box-shadow: 0 2px 12px rgba(0, 120, 212, 0.2);
+}
+
+.comment-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.comment-card__avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.comment-card__author {
+    font-size: 11px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.comment-card__time {
+    font-size: 10px;
+    color: #666666;
+}
+
+.comment-card__target {
+    font-size: 10px;
+    font-weight: 500;
+    color: #0078D4;
+    background-color: #E8F4FF;
+    padding: 2px 6px;
+    border-radius: 2px;
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+}
+
+.comment-card__content {
+    font-size: 12px;
+    color: #444444;
+    line-height: 1.5;
+}
+
+.comment-card__content strong {
+    color: #222222;
+}
+
+.comment-card__content ul {
+    margin: var(--spacing-xs) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.comment-card__content li {
+    margin-bottom: 2px;
+}
+
+/* Dark theme comment styles */
+[data-theme="dark"] .comment-card,
+:root:not([data-theme]) .comment-card {
+    background-color: #2D2D2D;
+    border-color: #404040;
+    border-left-color: #404040;
+}
+
+[data-theme="dark"] .comment-card:hover,
+:root:not([data-theme]) .comment-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .comment-card.active,
+:root:not([data-theme]) .comment-card.active {
+    border-left-color: #0078D4;
+    background-color: #1E3A5F;
+    box-shadow: 0 2px 12px rgba(0, 120, 212, 0.3);
+}
+
+[data-theme="dark"] .comment-card__author,
+:root:not([data-theme]) .comment-card__author {
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .comment-card__time,
+:root:not([data-theme]) .comment-card__time {
+    color: #888888;
+}
+
+[data-theme="dark"] .comment-card__target,
+:root:not([data-theme]) .comment-card__target {
+    background-color: #1E3A5F;
+    color: #4FC3F7;
+}
+
+[data-theme="dark"] .comment-card__content,
+:root:not([data-theme]) .comment-card__content {
+    color: #CCCCCC;
+}
+
+[data-theme="dark"] .comment-card__content strong,
+:root:not([data-theme]) .comment-card__content strong {
+    color: #FFFFFF;
+}
+
+/* Retro theme comment styles - Word 2003 yellow sticky look */
+[data-theme="retro"] .comment-card {
+    background-color: #FFFFCC;
+    border: 1px solid #CCCC99;
+    border-left: 3px solid #CCCC99;
+    border-radius: 0;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+[data-theme="retro"] .comment-card:hover {
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+[data-theme="retro"] .comment-card.active {
+    border-left-color: #FF9900;
+    background-color: #FFFF99;
+    box-shadow: 2px 2px 0 rgba(204, 153, 0, 0.3);
+}
+
+[data-theme="retro"] .comment-card__author {
+    color: #663300;
+}
+
+[data-theme="retro"] .comment-card__time {
+    color: #996633;
+}
+
+[data-theme="retro"] .comment-card__target {
+    background-color: #FFFF99;
+    color: #996600;
+}
+
+[data-theme="retro"] .comment-card__content {
+    color: #333300;
+}
+
+[data-theme="retro"] .comment-card__content strong {
+    color: #000000;
+}
+
+/* ==========================================================================
+   10. Utility Classes
    ========================================================================== */
 
 .sr-only {

@@ -32,11 +32,192 @@
         themeIcon.textContent = themeConfig[theme].icon;
         themeLabel.textContent = themeConfig[theme].label;
         localStorage.setItem('theme', theme);
+        localStorage.setItem('hasChangedTheme', 'true');
+        
+        // Handle pixelation for retro mode
+        if (theme === 'retro') {
+            pixelateAvatars();
+            pixelateLogo();
+        } else {
+            restoreAvatars();
+        }
+    }
+    
+    // Pixelate avatars for retro mode
+    function pixelateAvatars() {
+        const avatars = document.querySelectorAll('.user-avatar, .comment-card__avatar');
+        avatars.forEach(avatar => {
+            if (avatar.dataset.originalSrc) return; // Already pixelated
+            
+            const img = avatar;
+            const size = avatar.classList.contains('user-avatar') ? 32 : 24;
+            const pixelSize = 2; // Size of each "pixel" block (smaller = less pixelated)
+            
+            // Store original src
+            img.dataset.originalSrc = img.src;
+            
+            // Create canvas for pixelation
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            const tempImg = new Image();
+            tempImg.crossOrigin = 'anonymous';
+            tempImg.onload = function() {
+                // First, draw at tiny size
+                const w = size / pixelSize;
+                const h = size / pixelSize;
+                canvas.width = size;
+                canvas.height = size;
+                
+                // Disable smoothing
+                ctx.imageSmoothingEnabled = false;
+                ctx.mozImageSmoothingEnabled = false;
+                ctx.webkitImageSmoothingEnabled = false;
+                
+                // Draw small then scale up for pixelation
+                ctx.drawImage(tempImg, 0, 0, w, h);
+                ctx.drawImage(canvas, 0, 0, w, h, 0, 0, size, size);
+                
+                // Apply to image
+                img.src = canvas.toDataURL();
+            };
+            tempImg.src = img.src;
+        });
+    }
+    
+    // Restore original avatars
+    function restoreAvatars() {
+        const avatars = document.querySelectorAll('.user-avatar, .comment-card__avatar');
+        avatars.forEach(avatar => {
+            if (avatar.dataset.originalSrc) {
+                avatar.src = avatar.dataset.originalSrc;
+                delete avatar.dataset.originalSrc;
+            }
+        });
+        
+        // Restore logo
+        const logo = document.querySelector('.word-logo');
+        if (logo && logo.dataset.originalContent) {
+            logo.innerHTML = logo.dataset.originalContent;
+            delete logo.dataset.originalContent;
+        }
+    }
+    
+    // Pixelate the Word logo for retro mode
+    function pixelateLogo() {
+        const logo = document.querySelector('.word-logo');
+        if (!logo || logo.dataset.originalContent) return;
+        
+        // Store original content
+        logo.dataset.originalContent = logo.innerHTML;
+        
+        const size = 28;
+        const smallSize = 14; // Pixelation level
+        
+        // Create temp canvas to draw original
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCanvas.width = size;
+        tempCanvas.height = size;
+        
+        // Create gradient background
+        const gradient = tempCtx.createLinearGradient(0, 0, 0, size);
+        gradient.addColorStop(0, '#5B9BD5');
+        gradient.addColorStop(1, '#2E75B6');
+        tempCtx.fillStyle = gradient;
+        tempCtx.fillRect(0, 0, size, size);
+        
+        // Draw W
+        tempCtx.fillStyle = '#FFFFFF';
+        tempCtx.font = 'bold 16px Arial';
+        tempCtx.textAlign = 'center';
+        tempCtx.textBaseline = 'middle';
+        tempCtx.fillText('W', size / 2, size / 2 + 1);
+        
+        // Create small canvas for pixelation
+        const smallCanvas = document.createElement('canvas');
+        const smallCtx = smallCanvas.getContext('2d');
+        smallCanvas.width = smallSize;
+        smallCanvas.height = smallSize;
+        
+        // Draw small version
+        smallCtx.drawImage(tempCanvas, 0, 0, smallSize, smallSize);
+        
+        // Create final canvas and scale up with no smoothing
+        const finalCanvas = document.createElement('canvas');
+        const finalCtx = finalCanvas.getContext('2d');
+        finalCanvas.width = size;
+        finalCanvas.height = size;
+        
+        finalCtx.imageSmoothingEnabled = false;
+        finalCtx.mozImageSmoothingEnabled = false;
+        finalCtx.webkitImageSmoothingEnabled = false;
+        
+        finalCtx.drawImage(smallCanvas, 0, 0, size, size);
+        
+        // Replace logo content with canvas image
+        logo.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = finalCanvas.toDataURL();
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.imageRendering = 'pixelated';
+        logo.appendChild(img);
     }
     
     // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
+    
+    // Pixelate on load if retro
+    if (savedTheme === 'retro') {
+        window.addEventListener('load', () => {
+            pixelateAvatars();
+            pixelateLogo();
+        });
+    }
+    
+    // Show theme hint on every visit (except in retro mode)
+    if (themeTrigger && savedTheme !== 'retro') {
+        setTimeout(() => {
+            showThemeHint();
+        }, 1500);
+    }
+    
+    function showThemeHint() {
+        const hint = document.createElement('div');
+        hint.className = 'theme-hint';
+        hint.innerHTML = `
+            <span class=\"theme-hint__text\">Try <strong class=\"theme-hint__link\">Retro</strong> mode!</span>
+            <button class="theme-hint__close" aria-label="Dismiss">×</button>
+        `;
+        themeTrigger.parentElement.appendChild(hint);
+        
+        // Animate in
+        requestAnimationFrame(() => {
+            hint.classList.add('visible');
+        });
+        
+        // Close button
+        hint.querySelector('.theme-hint__close').addEventListener('click', (e) => {
+            e.stopPropagation();
+            dismissHint(hint);
+        });
+        
+        // Click "Retro" text to switch to retro mode
+        hint.querySelector('.theme-hint__link').addEventListener('click', (e) => {
+            e.stopPropagation();
+            setTheme('retro');
+            dismissHint(hint);
+        });
+    }
+    
+    function dismissHint(hint) {
+        if (hint && hint.parentElement) {
+            hint.classList.remove('visible');
+            setTimeout(() => hint.remove(), 300);
+        }
+    }
     
     if (themeTrigger) {
         themeTrigger.addEventListener('click', (e) => {
@@ -205,25 +386,11 @@
         '.resume-section--interactive, .experience-item--interactive, .education-item--interactive'
     );
     
-    interactiveItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            // Remove selected from all items
-            interactiveItems.forEach(i => i.classList.remove('selected'));
-            // Add selected to clicked item
-            item.classList.add('selected');
-            
-            // Trigger custom event for comment panel
-            const sectionId = item.dataset.section;
-            document.dispatchEvent(new CustomEvent('sectionSelected', { 
-                detail: { sectionId } 
-            }));
-        });
-    });
-    
     // Click outside to deselect
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.resume-section--interactive, .experience-item--interactive, .education-item--interactive')) {
+        if (!e.target.closest('.resume-section--interactive, .experience-item--interactive, .education-item--interactive, .comment-card, .comment-panel')) {
             interactiveItems.forEach(i => i.classList.remove('selected'));
+            document.querySelectorAll('.comment-card').forEach(c => c.classList.remove('active'));
         }
     });
 
@@ -475,6 +642,105 @@
     
     document.addEventListener('click', () => {
         closeAllDropdowns();
+    });
+
+    // ==========================================================================
+    // Comment System
+    // ==========================================================================
+    
+    const commentsToggle = document.getElementById('comments-toggle');
+    const commentPanel = document.getElementById('comment-panel');
+    const closeComments = document.getElementById('close-comments');
+    const commentCards = document.querySelectorAll('.comment-card');
+    
+    let commentsVisible = false;
+    
+    function toggleComments(show) {
+        commentsVisible = show !== undefined ? show : !commentsVisible;
+        
+        if (commentsVisible) {
+            commentPanel?.classList.add('visible');
+            commentsToggle?.classList.add('active');
+            document.body.classList.add('comments-visible');
+        } else {
+            commentPanel?.classList.remove('visible');
+            commentsToggle?.classList.remove('active');
+            document.body.classList.remove('comments-visible');
+            // Deactivate all comments
+            commentCards.forEach(card => card.classList.remove('active'));
+            interactiveItems.forEach(item => item.classList.remove('selected'));
+        }
+    }
+    
+    // Toggle button click
+    commentsToggle?.addEventListener('click', () => {
+        toggleComments();
+    });
+    
+    // Close button click
+    closeComments?.addEventListener('click', () => {
+        toggleComments(false);
+    });
+    
+    // Comment card click - highlight corresponding resume item
+    commentCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const targetId = card.dataset.target;
+            
+            // Deactivate all cards and items
+            commentCards.forEach(c => c.classList.remove('active'));
+            interactiveItems.forEach(item => item.classList.remove('selected'));
+            
+            // Activate clicked card
+            card.classList.add('active');
+            
+            // Find and highlight corresponding resume item
+            const targetItem = document.querySelector(`[data-section="${targetId}"]`);
+            if (targetItem) {
+                targetItem.classList.add('selected');
+                targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
+    
+    // Update: When clicking resume item, also highlight corresponding comment
+    interactiveItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Remove selected from all items
+            interactiveItems.forEach(i => i.classList.remove('selected'));
+            // Add selected to clicked item
+            item.classList.add('selected');
+            
+            const sectionId = item.dataset.section;
+            
+            // Auto-open comments panel when selecting a section
+            if (!commentsVisible) {
+                toggleComments(true);
+            }
+            
+            // Highlight the corresponding comment card
+            if (sectionId) {
+                commentCards.forEach(card => card.classList.remove('active'));
+                const targetCard = document.querySelector(`.comment-card[data-target="${sectionId}"]`);
+                if (targetCard) {
+                    targetCard.classList.add('active');
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+            
+            // Trigger custom event for comment panel
+            document.dispatchEvent(new CustomEvent('sectionSelected', { 
+                detail: { sectionId } 
+            }));
+        });
+    });
+    
+    // Keyboard shortcut: Cmd/Ctrl + Shift + C to toggle comments
+    document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'c') {
+            e.preventDefault();
+            toggleComments();
+        }
     });
 
     // ==========================================================================
