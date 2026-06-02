@@ -841,7 +841,7 @@
             if (commentTargetMathworks) commentTargetMathworks.textContent = '关于：MathWorks';
             if (commentContentMathworks) commentContentMathworks.innerHTML = '<strong>主要成就：</strong><ul><li>从零到一完成 ML 流水线可视化设计并上线</li><li>制定向导模式规范，被 20 余个团队采用</li><li>指导 3 名初级设计师成长</li></ul>';
             if (commentTargetCmu) commentTargetCmu.textContent = '关于：卡内基梅隆';
-            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>小趣事：</strong>ETC 让我学会了将技术与叙事融合，打造有温度的体验。我的毕业项目是一个 VR 密室逃脱！';
+            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>毕业项目：</strong>设计了一款 AR 游戏，帮助高中生通过沉浸式体验学习鱼菜共生（Aquaponics）——融合生物学、可持续发展与游戏化设计。';
             if (commentTargetGatech) commentTargetGatech.textContent = '关于：佐治亚理工';
             if (commentContentGatech) commentContentGatech.innerHTML = '<strong>意外转行：</strong>我最初学的是机械工程，却在一门人因工程课上爱上了设计——这是我做过最值得的选择！🚀';
             langToggle.classList.add('active');
@@ -863,7 +863,7 @@
             if (commentTargetMathworks) commentTargetMathworks.textContent = 'Re: MathWorks';
             if (commentContentMathworks) commentContentMathworks.innerHTML = '<strong>Key achievements:</strong><ul><li>Led ML pipeline visualization from concept to launch</li><li>Established wizard pattern standards adopted by 20+ teams</li><li>Mentored 3 junior designers</li></ul>';
             if (commentTargetCmu) commentTargetCmu.textContent = 'Re: Carnegie Mellon';
-            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>Fun fact:</strong> ETC taught me to build experiences that blend technology and storytelling. My capstone project was a VR escape room!';
+            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>Capstone:</strong> Designed an AR game that helps high schoolers learn aquaponics — blending biology, sustainability, and play through immersive technology.';
             if (commentTargetGatech) commentTargetGatech.textContent = 'Re: Georgia Tech';
             if (commentContentGatech) commentContentGatech.innerHTML = '<strong>Plot twist:</strong> Started as a Mechanical Engineer but fell in love with design through a human factors course. Best career pivot ever! 🚀';
             langToggle.classList.remove('active');
