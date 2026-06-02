@@ -814,6 +814,15 @@
         const cmuDegree = document.querySelector('[data-section="cmu"] .education-item__degree');
         const gatechSchool = document.querySelector('[data-section="gatech"] .education-item__school');
         const gatechDegree = document.querySelector('[data-section="gatech"] .education-item__degree');
+        const reviewTitle = document.querySelector('.review-pane-title');
+        const commentTargetMicrosoft = document.getElementById('comment-target-microsoft');
+        const commentContentMicrosoft = document.getElementById('comment-content-microsoft');
+        const commentTargetMathworks = document.getElementById('comment-target-mathworks');
+        const commentContentMathworks = document.getElementById('comment-content-mathworks');
+        const commentTargetCmu = document.getElementById('comment-target-cmu');
+        const commentContentCmu = document.getElementById('comment-content-cmu');
+        const commentTargetGatech = document.getElementById('comment-target-gatech');
+        const commentContentGatech = document.getElementById('comment-content-gatech');
 
         if (zh) {
             if (sectionTitles[0]) sectionTitles[0].textContent = '工作经历';
@@ -826,8 +835,17 @@
             if (cmuDegree) cmuDegree.textContent = contentZH.cmuDegree;
             if (gatechSchool) gatechSchool.textContent = contentZH.gatechSchool;
             if (gatechDegree) gatechDegree.textContent = contentZH.gatechDegree;
+            if (reviewTitle) reviewTitle.innerHTML = '<span class="icon">📝</span> 批注';
+            if (commentTargetMicrosoft) commentTargetMicrosoft.textContent = '关于：微软';
+            if (commentContentMicrosoft) commentContentMicrosoft.innerHTML = '🎉 我的功能即将在 <strong>Microsoft Build</strong> 上线——微软年度开发者大会！点击查看：<a href="https://build.microsoft.com/en-US/sessions/LIVE163?source=sessions" target="_blank">build.microsoft.com</a>';
+            if (commentTargetMathworks) commentTargetMathworks.textContent = '关于：MathWorks';
+            if (commentContentMathworks) commentContentMathworks.innerHTML = '<strong>主要成就：</strong><ul><li>从零到一完成 ML 流水线可视化设计并上线</li><li>制定向导模式规范，被 20 余个团队采用</li><li>指导 3 名初级设计师成长</li></ul>';
+            if (commentTargetCmu) commentTargetCmu.textContent = '关于：卡内基梅隆';
+            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>小趣事：</strong>ETC 让我学会了将技术与叙事融合，打造有温度的体验。我的毕业项目是一个 VR 密室逃脱！';
+            if (commentTargetGatech) commentTargetGatech.textContent = '关于：佐治亚理工';
+            if (commentContentGatech) commentContentGatech.innerHTML = '<strong>意外转行：</strong>我最初学的是机械工程，却在一门人因工程课上爱上了设计——这是我做过最值得的选择！🚀';
             langToggle.classList.add('active');
-        document.getElementById('lang-label').textContent = 'EN';
+            document.getElementById('lang-label').textContent = 'EN';
         } else {
             if (sectionTitles[0]) sectionTitles[0].textContent = 'Experience';
             if (sectionTitles[1]) sectionTitles[1].textContent = 'Education';
@@ -839,8 +857,17 @@
             if (cmuDegree) cmuDegree.textContent = 'M.S. Entertainment Technology';
             if (gatechSchool) gatechSchool.textContent = 'Georgia Institute of Technology';
             if (gatechDegree) gatechDegree.textContent = 'B.S. Mechanical Engineering';
+            if (reviewTitle) reviewTitle.innerHTML = '<span class="icon">📝</span> Reviewing';
+            if (commentTargetMicrosoft) commentTargetMicrosoft.textContent = 'Re: Microsoft';
+            if (commentContentMicrosoft) commentContentMicrosoft.innerHTML = '🎉 My feature is going live at <strong>Microsoft Build</strong> — Microsoft\'s flagship developer conference! Watch the session here: <a href="https://build.microsoft.com/en-US/sessions/LIVE163?source=sessions" target="_blank">build.microsoft.com</a>';
+            if (commentTargetMathworks) commentTargetMathworks.textContent = 'Re: MathWorks';
+            if (commentContentMathworks) commentContentMathworks.innerHTML = '<strong>Key achievements:</strong><ul><li>Led ML pipeline visualization from concept to launch</li><li>Established wizard pattern standards adopted by 20+ teams</li><li>Mentored 3 junior designers</li></ul>';
+            if (commentTargetCmu) commentTargetCmu.textContent = 'Re: Carnegie Mellon';
+            if (commentContentCmu) commentContentCmu.innerHTML = '<strong>Fun fact:</strong> ETC taught me to build experiences that blend technology and storytelling. My capstone project was a VR escape room!';
+            if (commentTargetGatech) commentTargetGatech.textContent = 'Re: Georgia Tech';
+            if (commentContentGatech) commentContentGatech.innerHTML = '<strong>Plot twist:</strong> Started as a Mechanical Engineer but fell in love with design through a human factors course. Best career pivot ever! 🚀';
             langToggle.classList.remove('active');
-        document.getElementById('lang-label').textContent = '中文';
+            document.getElementById('lang-label').textContent = '中文';
         }
     }
 
