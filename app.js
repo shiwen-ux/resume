@@ -826,7 +826,8 @@
             if (cmuDegree) cmuDegree.textContent = contentZH.cmuDegree;
             if (gatechSchool) gatechSchool.textContent = contentZH.gatechSchool;
             if (gatechDegree) gatechDegree.textContent = contentZH.gatechDegree;
-            langToggle.classList.add('lang-toggle--active');
+            langToggle.classList.add('active');
+        document.getElementById('lang-label').textContent = 'EN';
         } else {
             if (sectionTitles[0]) sectionTitles[0].textContent = 'Experience';
             if (sectionTitles[1]) sectionTitles[1].textContent = 'Education';
@@ -838,7 +839,8 @@
             if (cmuDegree) cmuDegree.textContent = 'M.S. Entertainment Technology';
             if (gatechSchool) gatechSchool.textContent = 'Georgia Institute of Technology';
             if (gatechDegree) gatechDegree.textContent = 'B.S. Mechanical Engineering';
-            langToggle.classList.remove('lang-toggle--active');
+            langToggle.classList.remove('active');
+        document.getElementById('lang-label').textContent = '中文';
         }
     }
 
