@@ -408,6 +408,29 @@ button:focus-visible {
     color: #FFFFFF;
 }
 
+/* Home Button */
+.home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-md);
+    color: #FFFFFF;
+    transition: background-color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.home-btn:hover {
+    background-color: var(--color-accent-hover);
+}
+
+[data-theme="retro"] .home-btn {
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-border-dark);
+}
+
 /* Document Name */
 .doc-name {
     font-size: 14px;
