@@ -365,15 +365,20 @@ button:focus-visible {
 
 /* App Launcher (9-dot grid) */
 .app-launcher {
-    width: 20px;
-    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
     padding: 2px;
     border-radius: var(--radius-sm);
-    transition: background-color var(--transition-fast);
+    color: var(--color-text-secondary);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
 .app-launcher:hover {
     background-color: var(--color-bg-hover);
+    color: var(--color-text-primary);
 }
 
 .app-launcher__grid {
