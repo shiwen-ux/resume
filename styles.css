@@ -1286,6 +1286,20 @@ button:focus-visible {
     line-height: 1.6;
 }
 
+.experience-item__bullets {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--color-paper-body);
+    line-height: 1.6;
+    margin: 6px 0 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.experience-item__bullets li {
+    margin-bottom: 6px;
+}
+
 /* Resume Columns */
 .resume-columns {
     display: flex;
