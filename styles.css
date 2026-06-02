@@ -1284,6 +1284,7 @@ button:focus-visible {
     font-size: 11px;
     color: var(--color-paper-body);
     line-height: 1.6;
+    margin-bottom: 4px;
 }
 
 .experience-item__bullets {
@@ -1292,12 +1293,16 @@ button:focus-visible {
     color: var(--color-paper-body);
     line-height: 1.6;
     margin: 6px 0 0 0;
-    padding-left: 0;
+    padding: 0;
     list-style: none;
+    list-style-type: none;
 }
 
 .experience-item__bullets li {
     margin-bottom: 6px;
+    list-style: none;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 /* Resume Columns */
