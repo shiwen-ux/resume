@@ -757,5 +757,96 @@
     // ==========================================================================
     
     console.log('Word UI initialized');
+
+    // ==========================================================================
+    // Language Toggle (EN / 中文)
+    // ==========================================================================
+    const langToggle = document.getElementById('lang-toggle');
+    let isChinese = false;
+
+    const translations = {
+        // Sidebar
+        '.resume-sidebar__name': '江\n诗雯',
+        '[data-label="location"] .resume-sidebar__label': '所在地',
+        '[data-label="email"] .resume-sidebar__label': '邮箱',
+        '[data-label="linkedin"] .resume-sidebar__label': '领英',
+        // Section titles
+        '.resume-section__title:first-of-type': '工作经历',
+    };
+
+    const contentEN = {
+        name: 'SHIWEN\nJIANG',
+        location: 'location',
+        email: 'email',
+        linkedin: 'linkedin',
+        experienceTitle: 'Experience',
+        educationTitle: 'Education',
+        microsoftMeta: 'Product Designer II | Apr. 2025 - Present',
+        microsoftDesc1: 'Microsoft AI Foundry — 微软面向 AI 应用开发者的端到端平台，支持构建、定制和部署 AI 智能体与应用。',
+        microsoftDesc2: '主导 Toolbox 从 0 到 1 的设计，帮助开发者发现、配置和管理用于构建 AI 智能体的 MCP 服务器与工具。',
+        microsoftDesc3: '推动 NextGen 设计系统在 AI Foundry 的落地，建立贡献流程、无障碍标准和赋能计划，四个月内将组件使用量从 1 万次提升至超过 100 万次。',
+        mathworksMeta: 'Product Designer | Jun. 2022 - Mar. 2025',
+        mathworksDesc: '在统计与机器学习领域，从零到一设计并交付了机器学习流水线可视化图表。为 MathWorks Parula 设计系统制定了向导模式规范，惠及 20 余个团队。',
+        cmuSchool: '卡内基梅隆大学',
+        cmuDegree: '娱乐技术理学硕士',
+        gatechSchool: '佐治亚理工学院',
+        gatechDegree: '机械工程理学学士',
+    };
+
+    const contentZH = {
+        experienceTitle: '工作经历',
+        educationTitle: '教育背景',
+        microsoftDesc1: 'Microsoft AI Foundry — 微软面向 AI 应用开发者的端到端平台，支持构建、定制和部署 AI 智能体与应用。',
+        microsoftDesc2: '主导 Toolbox 从 0 到 1 的设计，帮助开发者发现、配置和管理用于构建 AI 智能体的 MCP 服务器与工具。',
+        microsoftDesc3: '推动 NextGen 设计系统在 AI Foundry 的落地，建立贡献流程、无障碍标准和赋能计划，四个月内将组件使用量从 1 万次提升至超过 100 万次。',
+        mathworksDesc: '在统计与机器学习领域，从零到一设计并交付了机器学习流水线可视化图表。为 MathWorks Parula 设计系统制定了向导模式规范，惠及 20 余个团队。',
+        cmuSchool: '卡内基梅隆大学',
+        cmuDegree: '娱乐技术理学硕士',
+        gatechSchool: '佐治亚理工学院',
+        gatechDegree: '机械工程理学学士',
+    };
+
+    function applyLanguage(zh) {
+        const sectionTitles = document.querySelectorAll('.resume-section__title');
+        const experienceDescs = document.querySelectorAll('[data-section="microsoft"] .experience-item__description');
+        const mathworksDesc = document.querySelector('[data-section="mathworks"] .experience-item__description');
+        const cmuSchool = document.querySelector('[data-section="cmu"] .education-item__school');
+        const cmuDegree = document.querySelector('[data-section="cmu"] .education-item__degree');
+        const gatechSchool = document.querySelector('[data-section="gatech"] .education-item__school');
+        const gatechDegree = document.querySelector('[data-section="gatech"] .education-item__degree');
+
+        if (zh) {
+            if (sectionTitles[0]) sectionTitles[0].textContent = '工作经历';
+            if (sectionTitles[1]) sectionTitles[1].textContent = '教育背景';
+            if (experienceDescs[0]) experienceDescs[0].textContent = contentZH.microsoftDesc1;
+            if (experienceDescs[1]) experienceDescs[1].textContent = contentZH.microsoftDesc2;
+            if (experienceDescs[2]) experienceDescs[2].textContent = contentZH.microsoftDesc3;
+            if (mathworksDesc) mathworksDesc.textContent = contentZH.mathworksDesc;
+            if (cmuSchool) cmuSchool.textContent = contentZH.cmuSchool;
+            if (cmuDegree) cmuDegree.textContent = contentZH.cmuDegree;
+            if (gatechSchool) gatechSchool.textContent = contentZH.gatechSchool;
+            if (gatechDegree) gatechDegree.textContent = contentZH.gatechDegree;
+            langToggle.classList.add('lang-toggle--active');
+        } else {
+            if (sectionTitles[0]) sectionTitles[0].textContent = 'Experience';
+            if (sectionTitles[1]) sectionTitles[1].textContent = 'Education';
+            if (experienceDescs[0]) experienceDescs[0].textContent = 'Microsoft AI Foundry — Microsoft\'s end-to-end platform for building, customizing, and deploying AI agents and applications.';
+            if (experienceDescs[1]) experienceDescs[1].textContent = 'Drove 0→1 design of Toolbox, empowering developers to discover, configure, and manage MCP servers and tools for building AI agents.';
+            if (experienceDescs[2]) experienceDescs[2].textContent = 'Spearheaded NextGen Design System adoption across AI Foundry — defining contribution workflows, accessibility standards, and enablement programs that scaled component usage from 10K to 1M+ insertions in four months.';
+            if (mathworksDesc) mathworksDesc.textContent = 'As a designer in Statistics and Machine Learning area, designed and shipped an ML pipeline visualization plot from 0 to 1. Defined the standard of wizard pattern for MathWorks Parula Design system that benefits 20+ teams.';
+            if (cmuSchool) cmuSchool.textContent = 'Carnegie Mellon University';
+            if (cmuDegree) cmuDegree.textContent = 'M.S. Entertainment Technology';
+            if (gatechSchool) gatechSchool.textContent = 'Georgia Institute of Technology';
+            if (gatechDegree) gatechDegree.textContent = 'B.S. Mechanical Engineering';
+            langToggle.classList.remove('lang-toggle--active');
+        }
+    }
+
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            isChinese = !isChinese;
+            applyLanguage(isChinese);
+        });
+    }
     
 })();
