@@ -1845,6 +1845,15 @@ button:focus-visible {
     margin-bottom: 2px;
 }
 
+.comment-card__content a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.comment-card__content a:hover {
+    color: var(--color-accent-hover);
+}
+
 /* Dark theme comment styles */
 [data-theme="dark"] .comment-card,
 :root:not([data-theme]) .comment-card {
@@ -1889,6 +1898,16 @@ button:focus-visible {
 [data-theme="dark"] .comment-card__content strong,
 :root:not([data-theme]) .comment-card__content strong {
     color: #FFFFFF;
+}
+
+[data-theme="dark"] .comment-card__content a,
+:root:not([data-theme]) .comment-card__content a {
+    color: #4FC3F7;
+}
+
+[data-theme="dark"] .comment-card__content a:hover,
+:root:not([data-theme]) .comment-card__content a:hover {
+    color: #81D4FA;
 }
 
 /* Retro theme comment styles - Word 2003 yellow sticky look */
